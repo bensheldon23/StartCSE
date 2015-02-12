@@ -1,0 +1,898 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CommSalesPricingPlatformDataSet" targetNamespace="http://tempuri.org/CommSalesPricingPlatformDataSet.xsd" xmlns:mstns="http://tempuri.org/CommSalesPricingPlatformDataSet.xsd" xmlns="http://tempuri.org/CommSalesPricingPlatformDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="CommSalesPricingPlatformConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CommSalesPricingPlatformConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.StartCSE.Properties.Settings.GlobalReference.Default.CommSalesPricingPlatformConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PricingTableAdapter" GeneratorDataComponentClassName="PricingTableAdapter" Name="Pricing" UserDataComponentName="PricingTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CommSalesPricingPlatformConnectionString (Settings)" DbObjectName="CommSalesPricingPlatform.dbo.Pricing" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Pricing] WHERE (((@IsNull_SystemID = 1 AND [SystemID] IS NULL) OR ([SystemID] = @Original_SystemID)) AND ([PricingID] = @Original_PricingID) AND ((@IsNull_ExpirationDate = 1 AND [ExpirationDate] IS NULL) OR ([ExpirationDate] = @Original_ExpirationDate)) AND ((@IsNull_All_in_Price = 1 AND [All_in_Price] IS NULL) OR ([All_in_Price] = @Original_All_in_Price)) AND ((@IsNull_Finance_TakeHome = 1 AND [Finance_TakeHome] IS NULL) OR ([Finance_TakeHome] = @Original_Finance_TakeHome)) AND ((@IsNull_ContractStartRate = 1 AND [ContractStartRate] IS NULL) OR ([ContractStartRate] = @Original_ContractStartRate)) AND ((@IsNull_ContractTerm = 1 AND [ContractTerm] IS NULL) OR ([ContractTerm] = @Original_ContractTerm)) AND ((@IsNull_ContractEscalator = 1 AND [ContractEscalator] IS NULL) OR ([ContractEscalator] = @Original_ContractEscalator)) AND ((@IsNull_Prepaid = 1 AND [Prepaid] IS NULL) OR ([Prepaid] = @Original_Prepaid)) AND ((@IsNull_Rebate = 1 AND [Rebate] IS NULL) OR ([Rebate] = @Original_Rebate)) AND ((@IsNull_SREC_Upfront = 1 AND [SREC_Upfront] IS NULL) OR ([SREC_Upfront] = @Original_SREC_Upfront)) AND ((@IsNull_MA_SREC_factor = 1 AND [MA_SREC_factor] IS NULL) OR ([MA_SREC_factor] = @Original_MA_SREC_factor)) AND ((@IsNull_PBI = 1 AND [PBI] IS NULL) OR ([PBI] = @Original_PBI)) AND ((@IsNull_PBI_Term = 1 AND [PBI_Term] IS NULL) OR ([PBI_Term] = @Original_PBI_Term)) AND ((@IsNull_Estimate_FMV = 1 AND [Estimate_FMV] IS NULL) OR ([Estimate_FMV] = @Original_Estimate_FMV)) AND ((@IsNull_Gross_Margin = 1 AND [Gross_Margin] IS NULL) OR ([Gross_Margin] = @Original_Gross_Margin)) AND ((@IsNull_IRR_Day_1_Cash_Outlay = 1 AND [IRR_Day_1_Cash_Outlay] IS NULL) OR ([IRR_Day_1_Cash_Outlay] = @Original_IRR_Day_1_Cash_Outlay)) AND ((@IsNull_PricingNotes = 1 AND [PricingNotes] IS NULL) OR ([PricingNotes] = @Original_PricingNotes)) AND ((@IsNull_BatteryEPC = 1 AND [BatteryEPC] IS NULL) OR ([BatteryEPC] = @Original_BatteryEPC)) AND ((@IsNull_BatterySizekW = 1 AND [BatterySizekW] IS NULL) OR ([BatterySizekW] = @Original_BatterySizekW)) AND ((@IsNull_BatteryContractRate = 1 AND [BatteryContractRate] IS NULL) OR ([BatteryContractRate] = @Original_BatteryContractRate)) AND ((@IsNull_BatteryGuaranteedkW = 1 AND [BatteryGuaranteedkW] IS NULL) OR ([BatteryGuaranteedkW] = @Original_BatteryGuaranteedkW)) AND ((@IsNull_Batterytax = 1 AND [Batterytax] IS NULL) OR ([Batterytax] = @Original_Batterytax)) AND ((@IsNull_BatteryIncentive = 1 AND [BatteryIncentive] IS NULL) OR ([BatteryIncentive] = @Original_BatteryIncentive)) AND ((@IsNull_BatteryContractTerm = 1 AND [BatteryContractTerm] IS NULL) OR ([BatteryContractTerm] = @Original_BatteryContractTerm)) AND ((@IsNull_Modified = 1 AND [Modified] IS NULL) OR ([Modified] = @Original_Modified)) AND ((@IsNull_Created = 1 AND [Created] IS NULL) OR ([Created] = @Original_Created)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SystemID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SystemID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SystemID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SystemID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_PricingID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PricingID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ExpirationDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ExpirationDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_ExpirationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ExpirationDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_All_in_Price" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="All_in_Price" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_All_in_Price" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="All_in_Price" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Finance_TakeHome" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Finance_TakeHome" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Finance_TakeHome" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Finance_TakeHome" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ContractStartRate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ContractStartRate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_ContractStartRate" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="ContractStartRate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ContractTerm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ContractTerm" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ContractTerm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ContractTerm" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ContractEscalator" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ContractEscalator" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ContractEscalator" Precision="18" ProviderType="Decimal" Scale="1" Size="0" SourceColumn="ContractEscalator" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Prepaid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Prepaid" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Prepaid" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Prepaid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Rebate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Rebate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Rebate" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Rebate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SREC_Upfront" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SREC_Upfront" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_SREC_Upfront" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="SREC_Upfront" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MA_SREC_factor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MA_SREC_factor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_MA_SREC_factor" Precision="18" ProviderType="Decimal" Scale="1" Size="0" SourceColumn="MA_SREC_factor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PBI" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PBI" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_PBI" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="PBI" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PBI_Term" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PBI_Term" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_PBI_Term" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PBI_Term" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Estimate_FMV" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Estimate_FMV" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Estimate_FMV" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Estimate_FMV" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Gross_Margin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Gross_Margin" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Gross_Margin" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="Gross_Margin" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IRR_Day_1_Cash_Outlay" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IRR_Day_1_Cash_Outlay" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_IRR_Day_1_Cash_Outlay" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="IRR_Day_1_Cash_Outlay" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PricingNotes" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PricingNotes" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_PricingNotes" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PricingNotes" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BatteryEPC" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatteryEPC" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_BatteryEPC" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BatteryEPC" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BatterySizekW" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatterySizekW" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_BatterySizekW" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="BatterySizekW" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BatteryContractRate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatteryContractRate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_BatteryContractRate" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BatteryContractRate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BatteryGuaranteedkW" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatteryGuaranteedkW" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_BatteryGuaranteedkW" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="BatteryGuaranteedkW" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Batterytax" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Batterytax" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Batterytax" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Batterytax" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BatteryIncentive" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatteryIncentive" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_BatteryIncentive" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BatteryIncentive" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BatteryContractTerm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatteryContractTerm" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_BatteryContractTerm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatteryContractTerm" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Modified" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Modified" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Modified" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Modified" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Created" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Created" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Created" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Pricing] ([SystemID], [PricingApprovalStatus], [ExpirationDate], [FinanceabilityApprovalStatus], [NonStandardProject], [PricingName], [ASKofStrFin], [ContractType], [Credit], [All_in_Price], [Finance_TakeHome], [ContractStartRate], [ContractTerm], [ContractEscalator], [Prepaid], [Rebate], [SREC_Upfront], [MA_SREC_factor], [PBI], [PBI_Term], [Estimate_FMV], [Pricing_Model_Used], [Gross_Margin], [IRR_Day_1_Cash_Outlay], [PricingNotes], [BatteryEPC], [BatterySizekW], [BatteryContractRate], [BatteryGuaranteedkW], [Batterytax], [BatteryIncentive], [BatteryContractTerm], [ModifiedBy], [Modified], [CreatedBy], [Created]) VALUES (@SystemID, @PricingApprovalStatus, @ExpirationDate, @FinanceabilityApprovalStatus, @NonStandardProject, @PricingName, @ASKofStrFin, @ContractType, @Credit, @All_in_Price, @Finance_TakeHome, @ContractStartRate, @ContractTerm, @ContractEscalator, @Prepaid, @Rebate, @SREC_Upfront, @MA_SREC_factor, @PBI, @PBI_Term, @Estimate_FMV, @Pricing_Model_Used, @Gross_Margin, @IRR_Day_1_Cash_Outlay, @PricingNotes, @BatteryEPC, @BatterySizekW, @BatteryContractRate, @BatteryGuaranteedkW, @Batterytax, @BatteryIncentive, @BatteryContractTerm, @ModifiedBy, @Modified, @CreatedBy, @Created);
+SELECT SystemID, PricingID, PricingApprovalStatus, ExpirationDate, FinanceabilityApprovalStatus, NonStandardProject, PricingName, ASKofStrFin, ContractType, Credit, All_in_Price, Finance_TakeHome, ContractStartRate, ContractTerm, ContractEscalator, Prepaid, Rebate, SREC_Upfront, MA_SREC_factor, PBI, PBI_Term, Estimate_FMV, Pricing_Model_Used, Gross_Margin, IRR_Day_1_Cash_Outlay, PricingNotes, BatteryEPC, BatterySizekW, BatteryContractRate, BatteryGuaranteedkW, Batterytax, BatteryIncentive, BatteryContractTerm, ModifiedBy, Modified, CreatedBy, Created FROM Pricing WHERE (PricingID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SystemID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SystemID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PricingApprovalStatus" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="PricingApprovalStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@ExpirationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ExpirationDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FinanceabilityApprovalStatus" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="FinanceabilityApprovalStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NonStandardProject" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="NonStandardProject" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PricingName" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="PricingName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ASKofStrFin" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ASKofStrFin" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ContractType" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ContractType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Credit" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Credit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@All_in_Price" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="All_in_Price" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Finance_TakeHome" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Finance_TakeHome" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@ContractStartRate" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="ContractStartRate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ContractTerm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ContractTerm" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ContractEscalator" Precision="18" ProviderType="Decimal" Scale="1" Size="0" SourceColumn="ContractEscalator" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Prepaid" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Prepaid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Rebate" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Rebate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@SREC_Upfront" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="SREC_Upfront" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@MA_SREC_factor" Precision="18" ProviderType="Decimal" Scale="1" Size="0" SourceColumn="MA_SREC_factor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@PBI" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="PBI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@PBI_Term" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PBI_Term" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Estimate_FMV" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Estimate_FMV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Pricing_Model_Used" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Pricing_Model_Used" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Gross_Margin" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="Gross_Margin" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@IRR_Day_1_Cash_Outlay" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="IRR_Day_1_Cash_Outlay" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PricingNotes" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PricingNotes" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@BatteryEPC" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BatteryEPC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@BatterySizekW" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="BatterySizekW" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@BatteryContractRate" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BatteryContractRate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@BatteryGuaranteedkW" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="BatteryGuaranteedkW" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Batterytax" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Batterytax" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@BatteryIncentive" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BatteryIncentive" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@BatteryContractTerm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatteryContractTerm" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ModifiedBy" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ModifiedBy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Modified" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Modified" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CreatedBy" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="CreatedBy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Created" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SystemID, PricingID, PricingApprovalStatus, ExpirationDate, FinanceabilityApprovalStatus, NonStandardProject, PricingName, ASKofStrFin, ContractType, Credit, All_in_Price, Finance_TakeHome, ContractStartRate, ContractTerm, ContractEscalator, Prepaid, Rebate, SREC_Upfront, MA_SREC_factor, PBI, PBI_Term, Estimate_FMV, Pricing_Model_Used, Gross_Margin, IRR_Day_1_Cash_Outlay, PricingNotes, BatteryEPC, BatterySizekW, BatteryContractRate, BatteryGuaranteedkW, Batterytax, BatteryIncentive, BatteryContractTerm, ModifiedBy, Modified, CreatedBy, Created FROM dbo.Pricing</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Pricing] SET [SystemID] = @SystemID, [PricingApprovalStatus] = @PricingApprovalStatus, [ExpirationDate] = @ExpirationDate, [FinanceabilityApprovalStatus] = @FinanceabilityApprovalStatus, [NonStandardProject] = @NonStandardProject, [PricingName] = @PricingName, [ASKofStrFin] = @ASKofStrFin, [ContractType] = @ContractType, [Credit] = @Credit, [All_in_Price] = @All_in_Price, [Finance_TakeHome] = @Finance_TakeHome, [ContractStartRate] = @ContractStartRate, [ContractTerm] = @ContractTerm, [ContractEscalator] = @ContractEscalator, [Prepaid] = @Prepaid, [Rebate] = @Rebate, [SREC_Upfront] = @SREC_Upfront, [MA_SREC_factor] = @MA_SREC_factor, [PBI] = @PBI, [PBI_Term] = @PBI_Term, [Estimate_FMV] = @Estimate_FMV, [Pricing_Model_Used] = @Pricing_Model_Used, [Gross_Margin] = @Gross_Margin, [IRR_Day_1_Cash_Outlay] = @IRR_Day_1_Cash_Outlay, [PricingNotes] = @PricingNotes, [BatteryEPC] = @BatteryEPC, [BatterySizekW] = @BatterySizekW, [BatteryContractRate] = @BatteryContractRate, [BatteryGuaranteedkW] = @BatteryGuaranteedkW, [Batterytax] = @Batterytax, [BatteryIncentive] = @BatteryIncentive, [BatteryContractTerm] = @BatteryContractTerm, [ModifiedBy] = @ModifiedBy, [Modified] = @Modified, [CreatedBy] = @CreatedBy, [Created] = @Created WHERE (((@IsNull_SystemID = 1 AND [SystemID] IS NULL) OR ([SystemID] = @Original_SystemID)) AND ([PricingID] = @Original_PricingID) AND ((@IsNull_ExpirationDate = 1 AND [ExpirationDate] IS NULL) OR ([ExpirationDate] = @Original_ExpirationDate)) AND ((@IsNull_All_in_Price = 1 AND [All_in_Price] IS NULL) OR ([All_in_Price] = @Original_All_in_Price)) AND ((@IsNull_Finance_TakeHome = 1 AND [Finance_TakeHome] IS NULL) OR ([Finance_TakeHome] = @Original_Finance_TakeHome)) AND ((@IsNull_ContractStartRate = 1 AND [ContractStartRate] IS NULL) OR ([ContractStartRate] = @Original_ContractStartRate)) AND ((@IsNull_ContractTerm = 1 AND [ContractTerm] IS NULL) OR ([ContractTerm] = @Original_ContractTerm)) AND ((@IsNull_ContractEscalator = 1 AND [ContractEscalator] IS NULL) OR ([ContractEscalator] = @Original_ContractEscalator)) AND ((@IsNull_Prepaid = 1 AND [Prepaid] IS NULL) OR ([Prepaid] = @Original_Prepaid)) AND ((@IsNull_Rebate = 1 AND [Rebate] IS NULL) OR ([Rebate] = @Original_Rebate)) AND ((@IsNull_SREC_Upfront = 1 AND [SREC_Upfront] IS NULL) OR ([SREC_Upfront] = @Original_SREC_Upfront)) AND ((@IsNull_MA_SREC_factor = 1 AND [MA_SREC_factor] IS NULL) OR ([MA_SREC_factor] = @Original_MA_SREC_factor)) AND ((@IsNull_PBI = 1 AND [PBI] IS NULL) OR ([PBI] = @Original_PBI)) AND ((@IsNull_PBI_Term = 1 AND [PBI_Term] IS NULL) OR ([PBI_Term] = @Original_PBI_Term)) AND ((@IsNull_Estimate_FMV = 1 AND [Estimate_FMV] IS NULL) OR ([Estimate_FMV] = @Original_Estimate_FMV)) AND ((@IsNull_Gross_Margin = 1 AND [Gross_Margin] IS NULL) OR ([Gross_Margin] = @Original_Gross_Margin)) AND ((@IsNull_IRR_Day_1_Cash_Outlay = 1 AND [IRR_Day_1_Cash_Outlay] IS NULL) OR ([IRR_Day_1_Cash_Outlay] = @Original_IRR_Day_1_Cash_Outlay)) AND ((@IsNull_PricingNotes = 1 AND [PricingNotes] IS NULL) OR ([PricingNotes] = @Original_PricingNotes)) AND ((@IsNull_BatteryEPC = 1 AND [BatteryEPC] IS NULL) OR ([BatteryEPC] = @Original_BatteryEPC)) AND ((@IsNull_BatterySizekW = 1 AND [BatterySizekW] IS NULL) OR ([BatterySizekW] = @Original_BatterySizekW)) AND ((@IsNull_BatteryContractRate = 1 AND [BatteryContractRate] IS NULL) OR ([BatteryContractRate] = @Original_BatteryContractRate)) AND ((@IsNull_BatteryGuaranteedkW = 1 AND [BatteryGuaranteedkW] IS NULL) OR ([BatteryGuaranteedkW] = @Original_BatteryGuaranteedkW)) AND ((@IsNull_Batterytax = 1 AND [Batterytax] IS NULL) OR ([Batterytax] = @Original_Batterytax)) AND ((@IsNull_BatteryIncentive = 1 AND [BatteryIncentive] IS NULL) OR ([BatteryIncentive] = @Original_BatteryIncentive)) AND ((@IsNull_BatteryContractTerm = 1 AND [BatteryContractTerm] IS NULL) OR ([BatteryContractTerm] = @Original_BatteryContractTerm)) AND ((@IsNull_Modified = 1 AND [Modified] IS NULL) OR ([Modified] = @Original_Modified)) AND ((@IsNull_Created = 1 AND [Created] IS NULL) OR ([Created] = @Original_Created)));
+SELECT SystemID, PricingID, PricingApprovalStatus, ExpirationDate, FinanceabilityApprovalStatus, NonStandardProject, PricingName, ASKofStrFin, ContractType, Credit, All_in_Price, Finance_TakeHome, ContractStartRate, ContractTerm, ContractEscalator, Prepaid, Rebate, SREC_Upfront, MA_SREC_factor, PBI, PBI_Term, Estimate_FMV, Pricing_Model_Used, Gross_Margin, IRR_Day_1_Cash_Outlay, PricingNotes, BatteryEPC, BatterySizekW, BatteryContractRate, BatteryGuaranteedkW, Batterytax, BatteryIncentive, BatteryContractTerm, ModifiedBy, Modified, CreatedBy, Created FROM Pricing WHERE (PricingID = @PricingID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SystemID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SystemID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PricingApprovalStatus" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="PricingApprovalStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@ExpirationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ExpirationDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FinanceabilityApprovalStatus" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="FinanceabilityApprovalStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NonStandardProject" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="NonStandardProject" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PricingName" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="PricingName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ASKofStrFin" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ASKofStrFin" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ContractType" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ContractType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Credit" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Credit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@All_in_Price" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="All_in_Price" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Finance_TakeHome" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Finance_TakeHome" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@ContractStartRate" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="ContractStartRate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ContractTerm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ContractTerm" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ContractEscalator" Precision="18" ProviderType="Decimal" Scale="1" Size="0" SourceColumn="ContractEscalator" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Prepaid" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Prepaid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Rebate" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Rebate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@SREC_Upfront" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="SREC_Upfront" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@MA_SREC_factor" Precision="18" ProviderType="Decimal" Scale="1" Size="0" SourceColumn="MA_SREC_factor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@PBI" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="PBI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@PBI_Term" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PBI_Term" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Estimate_FMV" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Estimate_FMV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Pricing_Model_Used" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Pricing_Model_Used" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Gross_Margin" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="Gross_Margin" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@IRR_Day_1_Cash_Outlay" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="IRR_Day_1_Cash_Outlay" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PricingNotes" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PricingNotes" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@BatteryEPC" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BatteryEPC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@BatterySizekW" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="BatterySizekW" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@BatteryContractRate" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BatteryContractRate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@BatteryGuaranteedkW" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="BatteryGuaranteedkW" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Batterytax" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Batterytax" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@BatteryIncentive" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BatteryIncentive" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@BatteryContractTerm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatteryContractTerm" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ModifiedBy" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ModifiedBy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Modified" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Modified" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CreatedBy" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="CreatedBy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Created" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SystemID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SystemID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SystemID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SystemID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_PricingID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PricingID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ExpirationDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ExpirationDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_ExpirationDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ExpirationDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_All_in_Price" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="All_in_Price" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_All_in_Price" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="All_in_Price" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Finance_TakeHome" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Finance_TakeHome" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Finance_TakeHome" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Finance_TakeHome" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ContractStartRate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ContractStartRate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_ContractStartRate" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="ContractStartRate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ContractTerm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ContractTerm" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ContractTerm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ContractTerm" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ContractEscalator" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ContractEscalator" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ContractEscalator" Precision="18" ProviderType="Decimal" Scale="1" Size="0" SourceColumn="ContractEscalator" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Prepaid" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Prepaid" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Prepaid" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Prepaid" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Rebate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Rebate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Rebate" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Rebate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SREC_Upfront" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SREC_Upfront" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_SREC_Upfront" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="SREC_Upfront" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MA_SREC_factor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MA_SREC_factor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_MA_SREC_factor" Precision="18" ProviderType="Decimal" Scale="1" Size="0" SourceColumn="MA_SREC_factor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PBI" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PBI" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_PBI" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="PBI" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PBI_Term" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PBI_Term" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_PBI_Term" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PBI_Term" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Estimate_FMV" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Estimate_FMV" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Estimate_FMV" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Estimate_FMV" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Gross_Margin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Gross_Margin" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Gross_Margin" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="Gross_Margin" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IRR_Day_1_Cash_Outlay" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IRR_Day_1_Cash_Outlay" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_IRR_Day_1_Cash_Outlay" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="IRR_Day_1_Cash_Outlay" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PricingNotes" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PricingNotes" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_PricingNotes" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PricingNotes" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BatteryEPC" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatteryEPC" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_BatteryEPC" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BatteryEPC" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BatterySizekW" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatterySizekW" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_BatterySizekW" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="BatterySizekW" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BatteryContractRate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatteryContractRate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_BatteryContractRate" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BatteryContractRate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BatteryGuaranteedkW" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatteryGuaranteedkW" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_BatteryGuaranteedkW" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="BatteryGuaranteedkW" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Batterytax" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Batterytax" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Batterytax" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Batterytax" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BatteryIncentive" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatteryIncentive" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_BatteryIncentive" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BatteryIncentive" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BatteryContractTerm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatteryContractTerm" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_BatteryContractTerm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BatteryContractTerm" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Modified" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Modified" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Modified" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Modified" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Created" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Created" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Created" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="PricingID" ColumnName="PricingID" DataSourceName="CommSalesPricingPlatform.dbo.Pricing" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PricingID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="PricingID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SystemID" DataSetColumn="SystemID" />
+              <Mapping SourceColumn="PricingID" DataSetColumn="PricingID" />
+              <Mapping SourceColumn="PricingApprovalStatus" DataSetColumn="PricingApprovalStatus" />
+              <Mapping SourceColumn="ExpirationDate" DataSetColumn="ExpirationDate" />
+              <Mapping SourceColumn="FinanceabilityApprovalStatus" DataSetColumn="FinanceabilityApprovalStatus" />
+              <Mapping SourceColumn="NonStandardProject" DataSetColumn="NonStandardProject" />
+              <Mapping SourceColumn="PricingName" DataSetColumn="PricingName" />
+              <Mapping SourceColumn="ASKofStrFin" DataSetColumn="ASKofStrFin" />
+              <Mapping SourceColumn="ContractType" DataSetColumn="ContractType" />
+              <Mapping SourceColumn="Credit" DataSetColumn="Credit" />
+              <Mapping SourceColumn="All_in_Price" DataSetColumn="All_in_Price" />
+              <Mapping SourceColumn="Finance_TakeHome" DataSetColumn="Finance_TakeHome" />
+              <Mapping SourceColumn="ContractStartRate" DataSetColumn="ContractStartRate" />
+              <Mapping SourceColumn="ContractTerm" DataSetColumn="ContractTerm" />
+              <Mapping SourceColumn="ContractEscalator" DataSetColumn="ContractEscalator" />
+              <Mapping SourceColumn="Prepaid" DataSetColumn="Prepaid" />
+              <Mapping SourceColumn="Rebate" DataSetColumn="Rebate" />
+              <Mapping SourceColumn="SREC_Upfront" DataSetColumn="SREC_Upfront" />
+              <Mapping SourceColumn="MA_SREC_factor" DataSetColumn="MA_SREC_factor" />
+              <Mapping SourceColumn="PBI" DataSetColumn="PBI" />
+              <Mapping SourceColumn="PBI_Term" DataSetColumn="PBI_Term" />
+              <Mapping SourceColumn="Estimate_FMV" DataSetColumn="Estimate_FMV" />
+              <Mapping SourceColumn="Pricing_Model_Used" DataSetColumn="Pricing_Model_Used" />
+              <Mapping SourceColumn="Gross_Margin" DataSetColumn="Gross_Margin" />
+              <Mapping SourceColumn="IRR_Day_1_Cash_Outlay" DataSetColumn="IRR_Day_1_Cash_Outlay" />
+              <Mapping SourceColumn="PricingNotes" DataSetColumn="PricingNotes" />
+              <Mapping SourceColumn="BatteryEPC" DataSetColumn="BatteryEPC" />
+              <Mapping SourceColumn="BatterySizekW" DataSetColumn="BatterySizekW" />
+              <Mapping SourceColumn="BatteryContractRate" DataSetColumn="BatteryContractRate" />
+              <Mapping SourceColumn="BatteryGuaranteedkW" DataSetColumn="BatteryGuaranteedkW" />
+              <Mapping SourceColumn="Batterytax" DataSetColumn="Batterytax" />
+              <Mapping SourceColumn="BatteryIncentive" DataSetColumn="BatteryIncentive" />
+              <Mapping SourceColumn="BatteryContractTerm" DataSetColumn="BatteryContractTerm" />
+              <Mapping SourceColumn="ModifiedBy" DataSetColumn="ModifiedBy" />
+              <Mapping SourceColumn="Modified" DataSetColumn="Modified" />
+              <Mapping SourceColumn="CreatedBy" DataSetColumn="CreatedBy" />
+              <Mapping SourceColumn="Created" DataSetColumn="Created" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProjectsTableAdapter" GeneratorDataComponentClassName="ProjectsTableAdapter" Name="Projects" UserDataComponentName="ProjectsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CommSalesPricingPlatformConnectionString (Settings)" DbObjectName="CommSalesPricingPlatform.dbo.Projects" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Projects] WHERE (([ProjectID] = @Original_ProjectID))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ProjectID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Projects] ([ProjectName], [PDM], [ProjectStatus]) VALUES (@ProjectName, @PDM, @ProjectStatus);
+SELECT ProjectID, ProjectName, PDM, ProjectStatus FROM Projects WHERE (ProjectID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ProjectName" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ProjectName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PDM" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="PDM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ProjectStatus" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ProjectStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ProjectID, ProjectName, PDM, ProjectStatus FROM dbo.Projects</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Projects] SET [ProjectName] = @ProjectName, [PDM] = @PDM, [ProjectStatus] = @ProjectStatus WHERE (([ProjectID] = @Original_ProjectID));
+SELECT ProjectID, ProjectName, PDM, ProjectStatus FROM Projects WHERE (ProjectID = @ProjectID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ProjectName" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ProjectName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PDM" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="PDM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ProjectStatus" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ProjectStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ProjectID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ProjectID" ColumnName="ProjectID" DataSourceName="CommSalesPricingPlatform.dbo.Projects" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ProjectID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ProjectID" DataSetColumn="ProjectID" />
+              <Mapping SourceColumn="ProjectName" DataSetColumn="ProjectName" />
+              <Mapping SourceColumn="PDM" DataSetColumn="PDM" />
+              <Mapping SourceColumn="ProjectStatus" DataSetColumn="ProjectStatus" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SitesTableAdapter" GeneratorDataComponentClassName="SitesTableAdapter" Name="Sites" UserDataComponentName="SitesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CommSalesPricingPlatformConnectionString (Settings)" DbObjectName="CommSalesPricingPlatform.dbo.Sites" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Sites] WHERE (([SiteID] = @Original_SiteID) AND ((@IsNull_ProjectID = 1 AND [ProjectID] IS NULL) OR ([ProjectID] = @Original_ProjectID)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SiteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SiteID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ProjectID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ProjectID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Sites] ([SiteName], [SiteAddress], [State], [ProjectID]) VALUES (@SiteName, @SiteAddress, @State, @ProjectID);
+SELECT SiteID, SiteName, SiteAddress, State, ProjectID FROM Sites WHERE (SiteID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SiteName" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="SiteName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SiteAddress" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="SiteAddress" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@State" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="State" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ProjectID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SiteID, SiteName, SiteAddress, State, ProjectID FROM dbo.Sites</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Sites] SET [SiteName] = @SiteName, [SiteAddress] = @SiteAddress, [State] = @State, [ProjectID] = @ProjectID WHERE (([SiteID] = @Original_SiteID) AND ((@IsNull_ProjectID = 1 AND [ProjectID] IS NULL) OR ([ProjectID] = @Original_ProjectID)));
+SELECT SiteID, SiteName, SiteAddress, State, ProjectID FROM Sites WHERE (SiteID = @SiteID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SiteName" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="SiteName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SiteAddress" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="SiteAddress" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@State" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="State" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ProjectID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SiteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SiteID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ProjectID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ProjectID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="SiteID" ColumnName="SiteID" DataSourceName="CommSalesPricingPlatform.dbo.Sites" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SiteID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="SiteID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SiteID" DataSetColumn="SiteID" />
+              <Mapping SourceColumn="SiteName" DataSetColumn="SiteName" />
+              <Mapping SourceColumn="SiteAddress" DataSetColumn="SiteAddress" />
+              <Mapping SourceColumn="State" DataSetColumn="State" />
+              <Mapping SourceColumn="ProjectID" DataSetColumn="ProjectID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SystemsTableAdapter" GeneratorDataComponentClassName="SystemsTableAdapter" Name="Systems" UserDataComponentName="SystemsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CommSalesPricingPlatformConnectionString (Settings)" DbObjectName="CommSalesPricingPlatform.dbo.Systems" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Systems] WHERE (([SystemID] = @Original_SystemID) AND ((@IsNull_Created = 1 AND [Created] IS NULL) OR ([Created] = @Original_Created)) AND ((@IsNull_SystemSizeDC = 1 AND [SystemSizeDC] IS NULL) OR ([SystemSizeDC] = @Original_SystemSizeDC)) AND ((@IsNull_BuildCost = 1 AND [BuildCost] IS NULL) OR ([BuildCost] = @Original_BuildCost)) AND ((@IsNull_Yield = 1 AND [Yield] IS NULL) OR ([Yield] = @Original_Yield)) AND ((@IsNull_Year1Production = 1 AND [Year1Production] IS NULL) OR ([Year1Production] = @Original_Year1Production)) AND ((@IsNull_Approved = 1 AND [Approved] IS NULL) OR ([Approved] = @Original_Approved)) AND ((@IsNull_TaxRate = 1 AND [TaxRate] IS NULL) OR ([TaxRate] = @Original_TaxRate)) AND ([SiteID] = @Original_SiteID) AND ((@IsNull_PV = 1 AND [PV] IS NULL) OR ([PV] = @Original_PV)) AND ((@IsNull_INV = 1 AND [INV] IS NULL) OR ([INV] = @Original_INV)) AND ((@IsNull_BOS = 1 AND [BOS] IS NULL) OR ([BOS] = @Original_BOS)) AND ((@IsNull_Freight = 1 AND [Freight] IS NULL) OR ([Freight] = @Original_Freight)) AND ((@IsNull_Labor = 1 AND [Labor] IS NULL) OR ([Labor] = @Original_Labor)) AND ((@IsNull_Engineering = 1 AND [Engineering] IS NULL) OR ([Engineering] = @Original_Engineering)) AND ((@IsNull_Contingency = 1 AND [Contingency] IS NULL) OR ([Contingency] = @Original_Contingency)) AND ((@IsNull_Rentals = 1 AND [Rentals] IS NULL) OR ([Rentals] = @Original_Rentals)) AND ((@IsNull_ModuleCount = 1 AND [ModuleCount] IS NULL) OR ([ModuleCount] = @Original_ModuleCount)) AND ((@IsNull_ModuleSTCWatts = 1 AND [ModuleSTCWatts] IS NULL) OR ([ModuleSTCWatts] = @Original_ModuleSTCWatts)) AND ((@IsNull_InverterCount = 1 AND [InverterCount] IS NULL) OR ([InverterCount] = @Original_InverterCount)) AND ((@IsNull_InverterRating = 1 AND [InverterRating] IS NULL) OR ([InverterRating] = @Original_InverterRating)) AND ((@IsNull_Updated = 1 AND [Updated] IS NULL) OR ([Updated] = @Original_Updated)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SystemID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SystemID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Created" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Created" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Created" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SystemSizeDC" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SystemSizeDC" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_SystemSizeDC" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="SystemSizeDC" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BuildCost" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BuildCost" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_BuildCost" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="BuildCost" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Yield" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Yield" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Yield" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Yield" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Year1Production" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Year1Production" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Year1Production" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Year1Production" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Approved" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Approved" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Approved" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Approved" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TaxRate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TaxRate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_TaxRate" Precision="5" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="TaxRate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SiteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SiteID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PV" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PV" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_PV" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="PV" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_INV" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="INV" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_INV" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="INV" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BOS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BOS" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_BOS" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BOS" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Freight" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Freight" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Freight" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Freight" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Labor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Labor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Labor" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Labor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Engineering" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Engineering" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Engineering" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Engineering" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Contingency" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Contingency" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Contingency" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Contingency" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Rentals" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Rentals" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Rentals" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Rentals" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ModuleCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModuleCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ModuleCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModuleCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ModuleSTCWatts" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModuleSTCWatts" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ModuleSTCWatts" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="ModuleSTCWatts" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_InverterCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InverterCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_InverterCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InverterCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_InverterRating" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InverterRating" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_InverterRating" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="InverterRating" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Updated" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Updated" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Updated" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Updated" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Systems] ([Created], [CreatedBy], [SystemName], [SystemSizeDC], [MountingType], [BuildCost], [Yield], [Year1Production], [Assumptions], [ApprovalStatus], [ApprovedBy], [Approved], [WageType], [TaxRate], [SiteID], [PV], [INV], [BOS], [Freight], [Labor], [Engineering], [Contingency], [Rentals], [BOSFile], [ModuleMake], [ModuleCount], [ModuleSTCWatts], [InverterMake], [InverterCount], [InverterRating], [UpdatedBy], [Updated]) VALUES (@Created, @CreatedBy, @SystemName, @SystemSizeDC, @MountingType, @BuildCost, @Yield, @Year1Production, @Assumptions, @ApprovalStatus, @ApprovedBy, @Approved, @WageType, @TaxRate, @SiteID, @PV, @INV, @BOS, @Freight, @Labor, @Engineering, @Contingency, @Rentals, @BOSFile, @ModuleMake, @ModuleCount, @ModuleSTCWatts, @InverterMake, @InverterCount, @InverterRating, @UpdatedBy, @Updated);
+SELECT SystemID, Created, CreatedBy, SystemName, SystemSizeDC, MountingType, BuildCost, Yield, Year1Production, Assumptions, ApprovalStatus, ApprovedBy, Approved, WageType, TaxRate, SiteID, PV, INV, BOS, Freight, Labor, Engineering, Contingency, Rentals, BOSFile, ModuleMake, ModuleCount, ModuleSTCWatts, InverterMake, InverterCount, InverterRating, UpdatedBy, Updated FROM Systems WHERE (SystemID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Created" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CreatedBy" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="CreatedBy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SystemName" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="SystemName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@SystemSizeDC" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="SystemSizeDC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MountingType" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="MountingType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@BuildCost" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="BuildCost" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Yield" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Yield" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Year1Production" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Year1Production" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Assumptions" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Assumptions" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ApprovalStatus" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ApprovalStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ApprovedBy" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ApprovedBy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Approved" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Approved" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@WageType" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="WageType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@TaxRate" Precision="5" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="TaxRate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SiteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SiteID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@PV" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="PV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@INV" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="INV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@BOS" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BOS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Freight" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Freight" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Labor" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Labor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Engineering" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Engineering" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Contingency" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Contingency" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Rentals" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Rentals" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BOSFile" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="BOSFile" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ModuleMake" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ModuleMake" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ModuleCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModuleCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ModuleSTCWatts" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="ModuleSTCWatts" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@InverterMake" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="InverterMake" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@InverterCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InverterCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@InverterRating" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="InverterRating" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@UpdatedBy" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="UpdatedBy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Updated" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Updated" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SystemID, Created, CreatedBy, SystemName, SystemSizeDC, MountingType, BuildCost, Yield, Year1Production, Assumptions, ApprovalStatus, ApprovedBy, Approved, WageType, TaxRate, SiteID, PV, INV, BOS, Freight, Labor, Engineering, Contingency, Rentals, BOSFile, ModuleMake, ModuleCount, ModuleSTCWatts, InverterMake, InverterCount, InverterRating, UpdatedBy, Updated FROM dbo.Systems</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Systems] SET [Created] = @Created, [CreatedBy] = @CreatedBy, [SystemName] = @SystemName, [SystemSizeDC] = @SystemSizeDC, [MountingType] = @MountingType, [BuildCost] = @BuildCost, [Yield] = @Yield, [Year1Production] = @Year1Production, [Assumptions] = @Assumptions, [ApprovalStatus] = @ApprovalStatus, [ApprovedBy] = @ApprovedBy, [Approved] = @Approved, [WageType] = @WageType, [TaxRate] = @TaxRate, [SiteID] = @SiteID, [PV] = @PV, [INV] = @INV, [BOS] = @BOS, [Freight] = @Freight, [Labor] = @Labor, [Engineering] = @Engineering, [Contingency] = @Contingency, [Rentals] = @Rentals, [BOSFile] = @BOSFile, [ModuleMake] = @ModuleMake, [ModuleCount] = @ModuleCount, [ModuleSTCWatts] = @ModuleSTCWatts, [InverterMake] = @InverterMake, [InverterCount] = @InverterCount, [InverterRating] = @InverterRating, [UpdatedBy] = @UpdatedBy, [Updated] = @Updated WHERE (([SystemID] = @Original_SystemID) AND ((@IsNull_Created = 1 AND [Created] IS NULL) OR ([Created] = @Original_Created)) AND ((@IsNull_SystemSizeDC = 1 AND [SystemSizeDC] IS NULL) OR ([SystemSizeDC] = @Original_SystemSizeDC)) AND ((@IsNull_BuildCost = 1 AND [BuildCost] IS NULL) OR ([BuildCost] = @Original_BuildCost)) AND ((@IsNull_Yield = 1 AND [Yield] IS NULL) OR ([Yield] = @Original_Yield)) AND ((@IsNull_Year1Production = 1 AND [Year1Production] IS NULL) OR ([Year1Production] = @Original_Year1Production)) AND ((@IsNull_Approved = 1 AND [Approved] IS NULL) OR ([Approved] = @Original_Approved)) AND ((@IsNull_TaxRate = 1 AND [TaxRate] IS NULL) OR ([TaxRate] = @Original_TaxRate)) AND ([SiteID] = @Original_SiteID) AND ((@IsNull_PV = 1 AND [PV] IS NULL) OR ([PV] = @Original_PV)) AND ((@IsNull_INV = 1 AND [INV] IS NULL) OR ([INV] = @Original_INV)) AND ((@IsNull_BOS = 1 AND [BOS] IS NULL) OR ([BOS] = @Original_BOS)) AND ((@IsNull_Freight = 1 AND [Freight] IS NULL) OR ([Freight] = @Original_Freight)) AND ((@IsNull_Labor = 1 AND [Labor] IS NULL) OR ([Labor] = @Original_Labor)) AND ((@IsNull_Engineering = 1 AND [Engineering] IS NULL) OR ([Engineering] = @Original_Engineering)) AND ((@IsNull_Contingency = 1 AND [Contingency] IS NULL) OR ([Contingency] = @Original_Contingency)) AND ((@IsNull_Rentals = 1 AND [Rentals] IS NULL) OR ([Rentals] = @Original_Rentals)) AND ((@IsNull_ModuleCount = 1 AND [ModuleCount] IS NULL) OR ([ModuleCount] = @Original_ModuleCount)) AND ((@IsNull_ModuleSTCWatts = 1 AND [ModuleSTCWatts] IS NULL) OR ([ModuleSTCWatts] = @Original_ModuleSTCWatts)) AND ((@IsNull_InverterCount = 1 AND [InverterCount] IS NULL) OR ([InverterCount] = @Original_InverterCount)) AND ((@IsNull_InverterRating = 1 AND [InverterRating] IS NULL) OR ([InverterRating] = @Original_InverterRating)) AND ((@IsNull_Updated = 1 AND [Updated] IS NULL) OR ([Updated] = @Original_Updated)));
+SELECT SystemID, Created, CreatedBy, SystemName, SystemSizeDC, MountingType, BuildCost, Yield, Year1Production, Assumptions, ApprovalStatus, ApprovedBy, Approved, WageType, TaxRate, SiteID, PV, INV, BOS, Freight, Labor, Engineering, Contingency, Rentals, BOSFile, ModuleMake, ModuleCount, ModuleSTCWatts, InverterMake, InverterCount, InverterRating, UpdatedBy, Updated FROM Systems WHERE (SystemID = @SystemID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Created" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CreatedBy" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="CreatedBy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SystemName" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="SystemName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@SystemSizeDC" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="SystemSizeDC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MountingType" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="MountingType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@BuildCost" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="BuildCost" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Yield" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Yield" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Year1Production" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Year1Production" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Assumptions" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Assumptions" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ApprovalStatus" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ApprovalStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ApprovedBy" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ApprovedBy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Approved" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Approved" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@WageType" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="WageType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@TaxRate" Precision="5" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="TaxRate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SiteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SiteID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@PV" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="PV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@INV" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="INV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@BOS" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BOS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Freight" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Freight" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Labor" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Labor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Engineering" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Engineering" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Contingency" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Contingency" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Rentals" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Rentals" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BOSFile" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="BOSFile" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ModuleMake" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="ModuleMake" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ModuleCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModuleCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@ModuleSTCWatts" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="ModuleSTCWatts" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@InverterMake" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="InverterMake" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@InverterCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InverterCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@InverterRating" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="InverterRating" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@UpdatedBy" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="UpdatedBy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Updated" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Updated" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SystemID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SystemID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Created" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Created" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Created" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SystemSizeDC" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SystemSizeDC" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_SystemSizeDC" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="SystemSizeDC" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BuildCost" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BuildCost" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_BuildCost" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="BuildCost" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Yield" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Yield" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Yield" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Yield" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Year1Production" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Year1Production" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_Year1Production" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="Year1Production" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Approved" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Approved" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Approved" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Approved" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TaxRate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TaxRate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_TaxRate" Precision="5" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="TaxRate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SiteID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SiteID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PV" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PV" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_PV" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="PV" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_INV" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="INV" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_INV" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="INV" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BOS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BOS" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_BOS" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="BOS" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Freight" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Freight" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Freight" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Freight" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Labor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Labor" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Labor" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Labor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Engineering" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Engineering" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Engineering" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Engineering" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Contingency" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Contingency" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Contingency" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Contingency" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Rentals" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Rentals" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Rentals" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Rentals" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ModuleCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModuleCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ModuleCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModuleCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ModuleSTCWatts" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModuleSTCWatts" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_ModuleSTCWatts" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="ModuleSTCWatts" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_InverterCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InverterCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_InverterCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InverterCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_InverterRating" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="InverterRating" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_InverterRating" Precision="18" ProviderType="Decimal" Scale="3" Size="0" SourceColumn="InverterRating" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Updated" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Updated" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Updated" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Updated" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="SystemID" ColumnName="SystemID" DataSourceName="CommSalesPricingPlatform.dbo.Systems" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SystemID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="SystemID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SystemID" DataSetColumn="SystemID" />
+              <Mapping SourceColumn="Created" DataSetColumn="Created" />
+              <Mapping SourceColumn="CreatedBy" DataSetColumn="CreatedBy" />
+              <Mapping SourceColumn="SystemName" DataSetColumn="SystemName" />
+              <Mapping SourceColumn="SystemSizeDC" DataSetColumn="SystemSizeDC" />
+              <Mapping SourceColumn="MountingType" DataSetColumn="MountingType" />
+              <Mapping SourceColumn="BuildCost" DataSetColumn="BuildCost" />
+              <Mapping SourceColumn="Yield" DataSetColumn="Yield" />
+              <Mapping SourceColumn="Year1Production" DataSetColumn="Year1Production" />
+              <Mapping SourceColumn="Assumptions" DataSetColumn="Assumptions" />
+              <Mapping SourceColumn="ApprovalStatus" DataSetColumn="ApprovalStatus" />
+              <Mapping SourceColumn="ApprovedBy" DataSetColumn="ApprovedBy" />
+              <Mapping SourceColumn="Approved" DataSetColumn="Approved" />
+              <Mapping SourceColumn="WageType" DataSetColumn="WageType" />
+              <Mapping SourceColumn="TaxRate" DataSetColumn="TaxRate" />
+              <Mapping SourceColumn="SiteID" DataSetColumn="SiteID" />
+              <Mapping SourceColumn="PV" DataSetColumn="PV" />
+              <Mapping SourceColumn="INV" DataSetColumn="INV" />
+              <Mapping SourceColumn="BOS" DataSetColumn="BOS" />
+              <Mapping SourceColumn="Freight" DataSetColumn="Freight" />
+              <Mapping SourceColumn="Labor" DataSetColumn="Labor" />
+              <Mapping SourceColumn="Engineering" DataSetColumn="Engineering" />
+              <Mapping SourceColumn="Contingency" DataSetColumn="Contingency" />
+              <Mapping SourceColumn="Rentals" DataSetColumn="Rentals" />
+              <Mapping SourceColumn="BOSFile" DataSetColumn="BOSFile" />
+              <Mapping SourceColumn="ModuleMake" DataSetColumn="ModuleMake" />
+              <Mapping SourceColumn="ModuleCount" DataSetColumn="ModuleCount" />
+              <Mapping SourceColumn="ModuleSTCWatts" DataSetColumn="ModuleSTCWatts" />
+              <Mapping SourceColumn="InverterMake" DataSetColumn="InverterMake" />
+              <Mapping SourceColumn="InverterCount" DataSetColumn="InverterCount" />
+              <Mapping SourceColumn="InverterRating" DataSetColumn="InverterRating" />
+              <Mapping SourceColumn="UpdatedBy" DataSetColumn="UpdatedBy" />
+              <Mapping SourceColumn="Updated" DataSetColumn="Updated" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CommSalesPricingPlatformDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CommSalesPricingPlatformDataSet" msprop:Generator_UserDSName="CommSalesPricingPlatformDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Pricing" msprop:Generator_TableClassName="PricingDataTable" msprop:Generator_TableVarName="tablePricing" msprop:Generator_TablePropName="Pricing" msprop:Generator_RowDeletingName="PricingRowDeleting" msprop:Generator_RowChangingName="PricingRowChanging" msprop:Generator_RowEvHandlerName="PricingRowChangeEventHandler" msprop:Generator_RowDeletedName="PricingRowDeleted" msprop:Generator_UserTableName="Pricing" msprop:Generator_RowChangedName="PricingRowChanged" msprop:Generator_RowEvArgName="PricingRowChangeEvent" msprop:Generator_RowClassName="PricingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SystemID" msprop:Generator_ColumnVarNameInTable="columnSystemID" msprop:Generator_ColumnPropNameInRow="SystemID" msprop:Generator_ColumnPropNameInTable="SystemIDColumn" msprop:Generator_UserColumnName="SystemID" type="xs:int" minOccurs="0" />
+              <xs:element name="PricingID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPricingID" msprop:Generator_ColumnPropNameInRow="PricingID" msprop:Generator_ColumnPropNameInTable="PricingIDColumn" msprop:Generator_UserColumnName="PricingID" type="xs:int" />
+              <xs:element name="PricingApprovalStatus" msprop:Generator_ColumnVarNameInTable="columnPricingApprovalStatus" msprop:Generator_ColumnPropNameInRow="PricingApprovalStatus" msprop:Generator_ColumnPropNameInTable="PricingApprovalStatusColumn" msprop:Generator_UserColumnName="PricingApprovalStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExpirationDate" msprop:Generator_ColumnVarNameInTable="columnExpirationDate" msprop:Generator_ColumnPropNameInRow="ExpirationDate" msprop:Generator_ColumnPropNameInTable="ExpirationDateColumn" msprop:Generator_UserColumnName="ExpirationDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FinanceabilityApprovalStatus" msprop:Generator_ColumnVarNameInTable="columnFinanceabilityApprovalStatus" msprop:Generator_ColumnPropNameInRow="FinanceabilityApprovalStatus" msprop:Generator_ColumnPropNameInTable="FinanceabilityApprovalStatusColumn" msprop:Generator_UserColumnName="FinanceabilityApprovalStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NonStandardProject" msprop:Generator_ColumnVarNameInTable="columnNonStandardProject" msprop:Generator_ColumnPropNameInRow="NonStandardProject" msprop:Generator_ColumnPropNameInTable="NonStandardProjectColumn" msprop:Generator_UserColumnName="NonStandardProject" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PricingName" msprop:Generator_ColumnVarNameInTable="columnPricingName" msprop:Generator_ColumnPropNameInRow="PricingName" msprop:Generator_ColumnPropNameInTable="PricingNameColumn" msprop:Generator_UserColumnName="PricingName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ASKofStrFin" msprop:Generator_ColumnVarNameInTable="columnASKofStrFin" msprop:Generator_ColumnPropNameInRow="ASKofStrFin" msprop:Generator_ColumnPropNameInTable="ASKofStrFinColumn" msprop:Generator_UserColumnName="ASKofStrFin" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContractType" msprop:Generator_ColumnVarNameInTable="columnContractType" msprop:Generator_ColumnPropNameInRow="ContractType" msprop:Generator_ColumnPropNameInTable="ContractTypeColumn" msprop:Generator_UserColumnName="ContractType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Credit" msprop:Generator_ColumnVarNameInTable="columnCredit" msprop:Generator_ColumnPropNameInRow="Credit" msprop:Generator_ColumnPropNameInTable="CreditColumn" msprop:Generator_UserColumnName="Credit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="All_in_Price" msprop:Generator_ColumnVarNameInTable="columnAll_in_Price" msprop:Generator_ColumnPropNameInRow="All_in_Price" msprop:Generator_ColumnPropNameInTable="All_in_PriceColumn" msprop:Generator_UserColumnName="All_in_Price" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Finance_TakeHome" msprop:Generator_ColumnVarNameInTable="columnFinance_TakeHome" msprop:Generator_ColumnPropNameInRow="Finance_TakeHome" msprop:Generator_ColumnPropNameInTable="Finance_TakeHomeColumn" msprop:Generator_UserColumnName="Finance_TakeHome" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ContractStartRate" msprop:Generator_ColumnVarNameInTable="columnContractStartRate" msprop:Generator_ColumnPropNameInRow="ContractStartRate" msprop:Generator_ColumnPropNameInTable="ContractStartRateColumn" msprop:Generator_UserColumnName="ContractStartRate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ContractTerm" msprop:Generator_ColumnVarNameInTable="columnContractTerm" msprop:Generator_ColumnPropNameInRow="ContractTerm" msprop:Generator_ColumnPropNameInTable="ContractTermColumn" msprop:Generator_UserColumnName="ContractTerm" type="xs:int" minOccurs="0" />
+              <xs:element name="ContractEscalator" msprop:Generator_ColumnVarNameInTable="columnContractEscalator" msprop:Generator_ColumnPropNameInRow="ContractEscalator" msprop:Generator_ColumnPropNameInTable="ContractEscalatorColumn" msprop:Generator_UserColumnName="ContractEscalator" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Prepaid" msprop:Generator_ColumnVarNameInTable="columnPrepaid" msprop:Generator_ColumnPropNameInRow="Prepaid" msprop:Generator_ColumnPropNameInTable="PrepaidColumn" msprop:Generator_UserColumnName="Prepaid" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Rebate" msprop:Generator_ColumnVarNameInTable="columnRebate" msprop:Generator_ColumnPropNameInRow="Rebate" msprop:Generator_ColumnPropNameInTable="RebateColumn" msprop:Generator_UserColumnName="Rebate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SREC_Upfront" msprop:Generator_ColumnVarNameInTable="columnSREC_Upfront" msprop:Generator_ColumnPropNameInRow="SREC_Upfront" msprop:Generator_ColumnPropNameInTable="SREC_UpfrontColumn" msprop:Generator_UserColumnName="SREC_Upfront" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MA_SREC_factor" msprop:Generator_ColumnVarNameInTable="columnMA_SREC_factor" msprop:Generator_ColumnPropNameInRow="MA_SREC_factor" msprop:Generator_ColumnPropNameInTable="MA_SREC_factorColumn" msprop:Generator_UserColumnName="MA_SREC_factor" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PBI" msprop:Generator_ColumnVarNameInTable="columnPBI" msprop:Generator_ColumnPropNameInRow="PBI" msprop:Generator_ColumnPropNameInTable="PBIColumn" msprop:Generator_UserColumnName="PBI" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PBI_Term" msprop:Generator_ColumnVarNameInTable="columnPBI_Term" msprop:Generator_ColumnPropNameInRow="PBI_Term" msprop:Generator_ColumnPropNameInTable="PBI_TermColumn" msprop:Generator_UserColumnName="PBI_Term" type="xs:int" minOccurs="0" />
+              <xs:element name="Estimate_FMV" msprop:Generator_ColumnVarNameInTable="columnEstimate_FMV" msprop:Generator_ColumnPropNameInRow="Estimate_FMV" msprop:Generator_ColumnPropNameInTable="Estimate_FMVColumn" msprop:Generator_UserColumnName="Estimate_FMV" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Pricing_Model_Used" msprop:Generator_ColumnVarNameInTable="columnPricing_Model_Used" msprop:Generator_ColumnPropNameInRow="Pricing_Model_Used" msprop:Generator_ColumnPropNameInTable="Pricing_Model_UsedColumn" msprop:Generator_UserColumnName="Pricing_Model_Used" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Gross_Margin" msprop:Generator_ColumnVarNameInTable="columnGross_Margin" msprop:Generator_ColumnPropNameInRow="Gross_Margin" msprop:Generator_ColumnPropNameInTable="Gross_MarginColumn" msprop:Generator_UserColumnName="Gross_Margin" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IRR_Day_1_Cash_Outlay" msprop:Generator_ColumnVarNameInTable="columnIRR_Day_1_Cash_Outlay" msprop:Generator_ColumnPropNameInRow="IRR_Day_1_Cash_Outlay" msprop:Generator_ColumnPropNameInTable="IRR_Day_1_Cash_OutlayColumn" msprop:Generator_UserColumnName="IRR_Day_1_Cash_Outlay" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PricingNotes" msprop:Generator_ColumnVarNameInTable="columnPricingNotes" msprop:Generator_ColumnPropNameInRow="PricingNotes" msprop:Generator_ColumnPropNameInTable="PricingNotesColumn" msprop:Generator_UserColumnName="PricingNotes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BatteryEPC" msprop:Generator_ColumnVarNameInTable="columnBatteryEPC" msprop:Generator_ColumnPropNameInRow="BatteryEPC" msprop:Generator_ColumnPropNameInTable="BatteryEPCColumn" msprop:Generator_UserColumnName="BatteryEPC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BatterySizekW" msprop:Generator_ColumnVarNameInTable="columnBatterySizekW" msprop:Generator_ColumnPropNameInRow="BatterySizekW" msprop:Generator_ColumnPropNameInTable="BatterySizekWColumn" msprop:Generator_UserColumnName="BatterySizekW" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BatteryContractRate" msprop:Generator_ColumnVarNameInTable="columnBatteryContractRate" msprop:Generator_ColumnPropNameInRow="BatteryContractRate" msprop:Generator_ColumnPropNameInTable="BatteryContractRateColumn" msprop:Generator_UserColumnName="BatteryContractRate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BatteryGuaranteedkW" msprop:Generator_ColumnVarNameInTable="columnBatteryGuaranteedkW" msprop:Generator_ColumnPropNameInRow="BatteryGuaranteedkW" msprop:Generator_ColumnPropNameInTable="BatteryGuaranteedkWColumn" msprop:Generator_UserColumnName="BatteryGuaranteedkW" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Batterytax" msprop:Generator_ColumnVarNameInTable="columnBatterytax" msprop:Generator_ColumnPropNameInRow="Batterytax" msprop:Generator_ColumnPropNameInTable="BatterytaxColumn" msprop:Generator_UserColumnName="Batterytax" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BatteryIncentive" msprop:Generator_ColumnVarNameInTable="columnBatteryIncentive" msprop:Generator_ColumnPropNameInRow="BatteryIncentive" msprop:Generator_ColumnPropNameInTable="BatteryIncentiveColumn" msprop:Generator_UserColumnName="BatteryIncentive" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BatteryContractTerm" msprop:Generator_ColumnVarNameInTable="columnBatteryContractTerm" msprop:Generator_ColumnPropNameInRow="BatteryContractTerm" msprop:Generator_ColumnPropNameInTable="BatteryContractTermColumn" msprop:Generator_UserColumnName="BatteryContractTerm" type="xs:int" minOccurs="0" />
+              <xs:element name="ModifiedBy" msprop:Generator_ColumnVarNameInTable="columnModifiedBy" msprop:Generator_ColumnPropNameInRow="ModifiedBy" msprop:Generator_ColumnPropNameInTable="ModifiedByColumn" msprop:Generator_UserColumnName="ModifiedBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Modified" msprop:Generator_ColumnVarNameInTable="columnModified" msprop:Generator_ColumnPropNameInRow="Modified" msprop:Generator_ColumnPropNameInTable="ModifiedColumn" msprop:Generator_UserColumnName="Modified" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_UserColumnName="CreatedBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Created" msprop:Generator_ColumnVarNameInTable="columnCreated" msprop:Generator_ColumnPropNameInRow="Created" msprop:Generator_ColumnPropNameInTable="CreatedColumn" msprop:Generator_UserColumnName="Created" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Projects" msprop:Generator_TableClassName="ProjectsDataTable" msprop:Generator_TableVarName="tableProjects" msprop:Generator_TablePropName="Projects" msprop:Generator_RowDeletingName="ProjectsRowDeleting" msprop:Generator_RowChangingName="ProjectsRowChanging" msprop:Generator_RowEvHandlerName="ProjectsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProjectsRowDeleted" msprop:Generator_UserTableName="Projects" msprop:Generator_RowChangedName="ProjectsRowChanged" msprop:Generator_RowEvArgName="ProjectsRowChangeEvent" msprop:Generator_RowClassName="ProjectsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProjectID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnProjectID" msprop:Generator_ColumnPropNameInRow="ProjectID" msprop:Generator_ColumnPropNameInTable="ProjectIDColumn" msprop:Generator_UserColumnName="ProjectID" type="xs:int" />
+              <xs:element name="ProjectName" msprop:Generator_ColumnVarNameInTable="columnProjectName" msprop:Generator_ColumnPropNameInRow="ProjectName" msprop:Generator_ColumnPropNameInTable="ProjectNameColumn" msprop:Generator_UserColumnName="ProjectName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PDM" msprop:Generator_ColumnVarNameInTable="columnPDM" msprop:Generator_ColumnPropNameInRow="PDM" msprop:Generator_ColumnPropNameInTable="PDMColumn" msprop:Generator_UserColumnName="PDM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectStatus" msprop:Generator_ColumnVarNameInTable="columnProjectStatus" msprop:Generator_ColumnPropNameInRow="ProjectStatus" msprop:Generator_ColumnPropNameInTable="ProjectStatusColumn" msprop:Generator_UserColumnName="ProjectStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Sites" msprop:Generator_TableClassName="SitesDataTable" msprop:Generator_TableVarName="tableSites" msprop:Generator_TablePropName="Sites" msprop:Generator_RowDeletingName="SitesRowDeleting" msprop:Generator_RowChangingName="SitesRowChanging" msprop:Generator_RowEvHandlerName="SitesRowChangeEventHandler" msprop:Generator_RowDeletedName="SitesRowDeleted" msprop:Generator_UserTableName="Sites" msprop:Generator_RowChangedName="SitesRowChanged" msprop:Generator_RowEvArgName="SitesRowChangeEvent" msprop:Generator_RowClassName="SitesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SiteID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSiteID" msprop:Generator_ColumnPropNameInRow="SiteID" msprop:Generator_ColumnPropNameInTable="SiteIDColumn" msprop:Generator_UserColumnName="SiteID" type="xs:int" />
+              <xs:element name="SiteName" msprop:Generator_ColumnVarNameInTable="columnSiteName" msprop:Generator_ColumnPropNameInRow="SiteName" msprop:Generator_ColumnPropNameInTable="SiteNameColumn" msprop:Generator_UserColumnName="SiteName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SiteAddress" msprop:Generator_ColumnVarNameInTable="columnSiteAddress" msprop:Generator_ColumnPropNameInRow="SiteAddress" msprop:Generator_ColumnPropNameInTable="SiteAddressColumn" msprop:Generator_UserColumnName="SiteAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="State" msprop:Generator_ColumnVarNameInTable="columnState" msprop:Generator_ColumnPropNameInRow="State" msprop:Generator_ColumnPropNameInTable="StateColumn" msprop:Generator_UserColumnName="State" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectID" msprop:Generator_ColumnVarNameInTable="columnProjectID" msprop:Generator_ColumnPropNameInRow="ProjectID" msprop:Generator_ColumnPropNameInTable="ProjectIDColumn" msprop:Generator_UserColumnName="ProjectID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Systems" msprop:Generator_TableClassName="SystemsDataTable" msprop:Generator_TableVarName="tableSystems" msprop:Generator_TablePropName="Systems" msprop:Generator_RowDeletingName="SystemsRowDeleting" msprop:Generator_RowChangingName="SystemsRowChanging" msprop:Generator_RowEvHandlerName="SystemsRowChangeEventHandler" msprop:Generator_RowDeletedName="SystemsRowDeleted" msprop:Generator_UserTableName="Systems" msprop:Generator_RowChangedName="SystemsRowChanged" msprop:Generator_RowEvArgName="SystemsRowChangeEvent" msprop:Generator_RowClassName="SystemsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SystemID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSystemID" msprop:Generator_ColumnPropNameInRow="SystemID" msprop:Generator_ColumnPropNameInTable="SystemIDColumn" msprop:Generator_UserColumnName="SystemID" type="xs:int" />
+              <xs:element name="Created" msprop:Generator_ColumnVarNameInTable="columnCreated" msprop:Generator_ColumnPropNameInRow="Created" msprop:Generator_ColumnPropNameInTable="CreatedColumn" msprop:Generator_UserColumnName="Created" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_UserColumnName="CreatedBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SystemName" msprop:Generator_ColumnVarNameInTable="columnSystemName" msprop:Generator_ColumnPropNameInRow="SystemName" msprop:Generator_ColumnPropNameInTable="SystemNameColumn" msprop:Generator_UserColumnName="SystemName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SystemSizeDC" msprop:Generator_ColumnVarNameInTable="columnSystemSizeDC" msprop:Generator_ColumnPropNameInRow="SystemSizeDC" msprop:Generator_ColumnPropNameInTable="SystemSizeDCColumn" msprop:Generator_UserColumnName="SystemSizeDC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MountingType" msprop:Generator_ColumnVarNameInTable="columnMountingType" msprop:Generator_ColumnPropNameInRow="MountingType" msprop:Generator_ColumnPropNameInTable="MountingTypeColumn" msprop:Generator_UserColumnName="MountingType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BuildCost" msprop:Generator_ColumnVarNameInTable="columnBuildCost" msprop:Generator_ColumnPropNameInRow="BuildCost" msprop:Generator_ColumnPropNameInTable="BuildCostColumn" msprop:Generator_UserColumnName="BuildCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Yield" msprop:Generator_ColumnVarNameInTable="columnYield" msprop:Generator_ColumnPropNameInRow="Yield" msprop:Generator_ColumnPropNameInTable="YieldColumn" msprop:Generator_UserColumnName="Yield" type="xs:int" minOccurs="0" />
+              <xs:element name="Year1Production" msprop:Generator_ColumnVarNameInTable="columnYear1Production" msprop:Generator_ColumnPropNameInRow="Year1Production" msprop:Generator_ColumnPropNameInTable="Year1ProductionColumn" msprop:Generator_UserColumnName="Year1Production" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Assumptions" msprop:Generator_ColumnVarNameInTable="columnAssumptions" msprop:Generator_ColumnPropNameInRow="Assumptions" msprop:Generator_ColumnPropNameInTable="AssumptionsColumn" msprop:Generator_UserColumnName="Assumptions" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ApprovalStatus" msprop:Generator_ColumnVarNameInTable="columnApprovalStatus" msprop:Generator_ColumnPropNameInRow="ApprovalStatus" msprop:Generator_ColumnPropNameInTable="ApprovalStatusColumn" msprop:Generator_UserColumnName="ApprovalStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ApprovedBy" msprop:Generator_ColumnVarNameInTable="columnApprovedBy" msprop:Generator_ColumnPropNameInRow="ApprovedBy" msprop:Generator_ColumnPropNameInTable="ApprovedByColumn" msprop:Generator_UserColumnName="ApprovedBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Approved" msprop:Generator_ColumnVarNameInTable="columnApproved" msprop:Generator_ColumnPropNameInRow="Approved" msprop:Generator_ColumnPropNameInTable="ApprovedColumn" msprop:Generator_UserColumnName="Approved" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="WageType" msprop:Generator_ColumnVarNameInTable="columnWageType" msprop:Generator_ColumnPropNameInRow="WageType" msprop:Generator_ColumnPropNameInTable="WageTypeColumn" msprop:Generator_UserColumnName="WageType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TaxRate" msprop:Generator_ColumnVarNameInTable="columnTaxRate" msprop:Generator_ColumnPropNameInRow="TaxRate" msprop:Generator_ColumnPropNameInTable="TaxRateColumn" msprop:Generator_UserColumnName="TaxRate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SiteID" msprop:Generator_ColumnVarNameInTable="columnSiteID" msprop:Generator_ColumnPropNameInRow="SiteID" msprop:Generator_ColumnPropNameInTable="SiteIDColumn" msprop:Generator_UserColumnName="SiteID" type="xs:int" />
+              <xs:element name="PV" msprop:Generator_ColumnVarNameInTable="columnPV" msprop:Generator_ColumnPropNameInRow="PV" msprop:Generator_ColumnPropNameInTable="PVColumn" msprop:Generator_UserColumnName="PV" type="xs:decimal" minOccurs="0" />
+              <xs:element name="INV" msprop:Generator_ColumnVarNameInTable="columnINV" msprop:Generator_ColumnPropNameInRow="INV" msprop:Generator_ColumnPropNameInTable="INVColumn" msprop:Generator_UserColumnName="INV" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BOS" msprop:Generator_ColumnVarNameInTable="columnBOS" msprop:Generator_ColumnPropNameInRow="BOS" msprop:Generator_ColumnPropNameInTable="BOSColumn" msprop:Generator_UserColumnName="BOS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Freight" msprop:Generator_ColumnVarNameInTable="columnFreight" msprop:Generator_ColumnPropNameInRow="Freight" msprop:Generator_ColumnPropNameInTable="FreightColumn" msprop:Generator_UserColumnName="Freight" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Labor" msprop:Generator_ColumnVarNameInTable="columnLabor" msprop:Generator_ColumnPropNameInRow="Labor" msprop:Generator_ColumnPropNameInTable="LaborColumn" msprop:Generator_UserColumnName="Labor" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Engineering" msprop:Generator_ColumnVarNameInTable="columnEngineering" msprop:Generator_ColumnPropNameInRow="Engineering" msprop:Generator_ColumnPropNameInTable="EngineeringColumn" msprop:Generator_UserColumnName="Engineering" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Contingency" msprop:Generator_ColumnVarNameInTable="columnContingency" msprop:Generator_ColumnPropNameInRow="Contingency" msprop:Generator_ColumnPropNameInTable="ContingencyColumn" msprop:Generator_UserColumnName="Contingency" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Rentals" msprop:Generator_ColumnVarNameInTable="columnRentals" msprop:Generator_ColumnPropNameInRow="Rentals" msprop:Generator_ColumnPropNameInTable="RentalsColumn" msprop:Generator_UserColumnName="Rentals" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BOSFile" msprop:Generator_ColumnVarNameInTable="columnBOSFile" msprop:Generator_ColumnPropNameInRow="BOSFile" msprop:Generator_ColumnPropNameInTable="BOSFileColumn" msprop:Generator_UserColumnName="BOSFile" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ModuleMake" msprop:Generator_ColumnVarNameInTable="columnModuleMake" msprop:Generator_ColumnPropNameInRow="ModuleMake" msprop:Generator_ColumnPropNameInTable="ModuleMakeColumn" msprop:Generator_UserColumnName="ModuleMake" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ModuleCount" msprop:Generator_ColumnVarNameInTable="columnModuleCount" msprop:Generator_ColumnPropNameInRow="ModuleCount" msprop:Generator_ColumnPropNameInTable="ModuleCountColumn" msprop:Generator_UserColumnName="ModuleCount" type="xs:int" minOccurs="0" />
+              <xs:element name="ModuleSTCWatts" msprop:Generator_ColumnVarNameInTable="columnModuleSTCWatts" msprop:Generator_ColumnPropNameInRow="ModuleSTCWatts" msprop:Generator_ColumnPropNameInTable="ModuleSTCWattsColumn" msprop:Generator_UserColumnName="ModuleSTCWatts" type="xs:decimal" minOccurs="0" />
+              <xs:element name="InverterMake" msprop:Generator_ColumnVarNameInTable="columnInverterMake" msprop:Generator_ColumnPropNameInRow="InverterMake" msprop:Generator_ColumnPropNameInTable="InverterMakeColumn" msprop:Generator_UserColumnName="InverterMake" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="InverterCount" msprop:Generator_ColumnVarNameInTable="columnInverterCount" msprop:Generator_ColumnPropNameInRow="InverterCount" msprop:Generator_ColumnPropNameInTable="InverterCountColumn" msprop:Generator_UserColumnName="InverterCount" type="xs:int" minOccurs="0" />
+              <xs:element name="InverterRating" msprop:Generator_ColumnVarNameInTable="columnInverterRating" msprop:Generator_ColumnPropNameInRow="InverterRating" msprop:Generator_ColumnPropNameInTable="InverterRatingColumn" msprop:Generator_UserColumnName="InverterRating" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UpdatedBy" msprop:Generator_ColumnVarNameInTable="columnUpdatedBy" msprop:Generator_ColumnPropNameInRow="UpdatedBy" msprop:Generator_ColumnPropNameInTable="UpdatedByColumn" msprop:Generator_UserColumnName="UpdatedBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Updated" msprop:Generator_ColumnVarNameInTable="columnUpdated" msprop:Generator_ColumnPropNameInRow="Updated" msprop:Generator_ColumnPropNameInTable="UpdatedColumn" msprop:Generator_UserColumnName="Updated" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Pricing" />
+      <xs:field xpath="mstns:PricingID" />
+    </xs:unique>
+    <xs:unique name="Projects_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Projects" />
+      <xs:field xpath="mstns:ProjectID" />
+    </xs:unique>
+    <xs:unique name="Sites_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Sites" />
+      <xs:field xpath="mstns:SiteID" />
+    </xs:unique>
+    <xs:unique name="Systems_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Systems" />
+      <xs:field xpath="mstns:SystemID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_Pricing_Systems" msdata:parent="Systems" msdata:child="Pricing" msdata:parentkey="SystemID" msdata:childkey="SystemID" msprop:Generator_UserChildTable="Pricing" msprop:Generator_ChildPropName="GetPricingRows" msprop:Generator_UserRelationName="FK_Pricing_Systems" msprop:Generator_RelationVarName="relationFK_Pricing_Systems" msprop:Generator_UserParentTable="Systems" msprop:Generator_ParentPropName="SystemsRow" />
+      <msdata:Relationship name="FK_Sites_Projects" msdata:parent="Projects" msdata:child="Sites" msdata:parentkey="ProjectID" msdata:childkey="ProjectID" msprop:Generator_UserChildTable="Sites" msprop:Generator_ChildPropName="GetSitesRows" msprop:Generator_UserRelationName="FK_Sites_Projects" msprop:Generator_ParentPropName="ProjectsRow" msprop:Generator_RelationVarName="relationFK_Sites_Projects" msprop:Generator_UserParentTable="Projects" />
+      <msdata:Relationship name="FK_Systems_Sites" msdata:parent="Sites" msdata:child="Systems" msdata:parentkey="SiteID" msdata:childkey="SiteID" msprop:Generator_UserChildTable="Systems" msprop:Generator_ChildPropName="GetSystemsRows" msprop:Generator_UserRelationName="FK_Systems_Sites" msprop:Generator_ParentPropName="SitesRow" msprop:Generator_RelationVarName="relationFK_Systems_Sites" msprop:Generator_UserParentTable="Sites" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
