@@ -1,6 +1,6 @@
 ﻿namespace StartCSE
 {
-    partial class Form1
+    partial class StartCSE
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartCSE));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.SitesColumnLbl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddressColumnLbl = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,10 +56,20 @@
             this.comboBoxPDM = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.NewProjecttabPage = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ASTdataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddSitesButton = new System.Windows.Forms.Button();
+            this.ASTClearButton = new System.Windows.Forms.Button();
+            this.ASTPasteButton = new System.Windows.Forms.Button();
+            this.ASTProjectsListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ProgressgroupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.NewProjecttabPage.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ASTdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -300,24 +310,29 @@
             // 
             // comboBoxPDM
             // 
+            this.comboBoxPDM.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBoxPDM.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxPDM.FormattingEnabled = true;
             this.comboBoxPDM.Items.AddRange(new object[] {
-            "Dan Leary",
             "Brent Eskay",
+            "Dan Leary",
             "Lauren Harris"});
             this.comboBoxPDM.Location = new System.Drawing.Point(136, 46);
             this.comboBoxPDM.Name = "comboBoxPDM";
             this.comboBoxPDM.Size = new System.Drawing.Size(219, 23);
+            this.comboBoxPDM.Sorted = true;
             this.comboBoxPDM.TabIndex = 11;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.NewProjecttabPage);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(12, 64);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(589, 525);
             this.tabControl1.TabIndex = 12;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // NewProjecttabPage
             // 
@@ -339,7 +354,86 @@
             this.NewProjecttabPage.Text = "New Project";
             this.NewProjecttabPage.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.ASTdataGridView);
+            this.tabPage1.Controls.Add(this.AddSitesButton);
+            this.tabPage1.Controls.Add(this.ASTClearButton);
+            this.tabPage1.Controls.Add(this.ASTPasteButton);
+            this.tabPage1.Controls.Add(this.ASTProjectsListBox);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(581, 497);
+            this.tabPage1.TabIndex = 1;
+            this.tabPage1.Text = "Add Site(s)";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // ASTdataGridView
+            // 
+            this.ASTdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ASTdataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.ASTdataGridView.Location = new System.Drawing.Point(24, 145);
+            this.ASTdataGridView.Name = "ASTdataGridView";
+            this.ASTdataGridView.RowHeadersWidth = 40;
+            this.ASTdataGridView.Size = new System.Drawing.Size(539, 269);
+            this.ASTdataGridView.TabIndex = 9;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Sites";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 300;
+            // 
+            // AddSitesButton
+            // 
+            this.AddSitesButton.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddSitesButton.Location = new System.Drawing.Point(89, 436);
+            this.AddSitesButton.Name = "AddSitesButton";
+            this.AddSitesButton.Size = new System.Drawing.Size(176, 45);
+            this.AddSitesButton.TabIndex = 10;
+            this.AddSitesButton.Text = "ADD SITES";
+            this.AddSitesButton.UseVisualStyleBackColor = true;
+            this.AddSitesButton.Click += new System.EventHandler(this.AddSitesButton_Click);
+            // 
+            // ASTClearButton
+            // 
+            this.ASTClearButton.Location = new System.Drawing.Point(476, 436);
+            this.ASTClearButton.Name = "ASTClearButton";
+            this.ASTClearButton.Size = new System.Drawing.Size(75, 23);
+            this.ASTClearButton.TabIndex = 12;
+            this.ASTClearButton.Text = "Clear Table";
+            this.ASTClearButton.UseVisualStyleBackColor = true;
+            this.ASTClearButton.Click += new System.EventHandler(this.ASTClearButton_Click);
+            // 
+            // ASTPasteButton
+            // 
+            this.ASTPasteButton.Location = new System.Drawing.Point(375, 436);
+            this.ASTPasteButton.Name = "ASTPasteButton";
+            this.ASTPasteButton.Size = new System.Drawing.Size(75, 23);
+            this.ASTPasteButton.TabIndex = 11;
+            this.ASTPasteButton.Text = "Paste";
+            this.ASTPasteButton.UseVisualStyleBackColor = true;
+            this.ASTPasteButton.Click += new System.EventHandler(this.ASTPasteButton_Click);
+            // 
+            // ASTProjectsListBox
+            // 
+            this.ASTProjectsListBox.FormattingEnabled = true;
+            this.ASTProjectsListBox.ItemHeight = 15;
+            this.ASTProjectsListBox.Location = new System.Drawing.Point(24, 15);
+            this.ASTProjectsListBox.Name = "ASTProjectsListBox";
+            this.ASTProjectsListBox.Size = new System.Drawing.Size(539, 109);
+            this.ASTProjectsListBox.TabIndex = 0;
+            // 
+            // StartCSE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -361,7 +455,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(645, 676);
-            this.Name = "Form1";
+            this.Name = "StartCSE";
             this.Text = "StartCSE";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ProgressgroupBox1.ResumeLayout(false);
@@ -369,6 +463,8 @@
             this.tabControl1.ResumeLayout(false);
             this.NewProjecttabPage.ResumeLayout(false);
             this.NewProjecttabPage.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ASTdataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,6 +499,14 @@
         private System.Windows.Forms.ComboBox comboBoxPDM;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage NewProjecttabPage;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ListBox ASTProjectsListBox;
+        private System.Windows.Forms.DataGridView ASTdataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Button AddSitesButton;
+        private System.Windows.Forms.Button ASTClearButton;
+        private System.Windows.Forms.Button ASTPasteButton;
     }
 }
 
