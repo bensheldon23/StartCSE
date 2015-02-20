@@ -488,6 +488,7 @@ namespace StartCSE
             xmlWriter.WriteAttributeString("Units", "IP");
             
             //Add SQL ProjectID to XML
+            xmlWriter.WriteElementString("ProjectName", project_name);
             xmlWriter.WriteElementString("ProjectID", GlobalV.project_ID.ToString());
 
             foreach (Sites Site in Sites)
