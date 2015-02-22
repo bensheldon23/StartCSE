@@ -129,7 +129,7 @@ namespace StartCSE
 
             //Loading PMs from AD
             comboBoxPDM.DataSource = FindPDMs();
-            
+
             //Loading Version Info
             List<string> version = new List<string>();
             version.AddRange(File.ReadAllLines(GlobalV.version_path_local));
@@ -186,7 +186,7 @@ namespace StartCSE
   
             catch (Exception e)  
            {  
-                Console.WriteLine("Error: " + e.Message);  
+                MessageBox.Show("PDMs not loaded.  Try reconnecting to VPN."+System.Environment.NewLine+"Error: " + e.Message);  
            }
            return PDMs;
 
@@ -194,34 +194,56 @@ namespace StartCSE
 
         private void AddSitesButton_Click(object sender, EventArgs e)
         {
-            string project_id;
-            string job_path,notes_path;
-
-            //Add check to confirm all files are closed
-
-            ASTdataGridView.AllowUserToAddRows = false;
-
-            Sites[] Sites = new Sites[ASTdataGridView.RowCount];
-
-            Sites = getGeoData(Sites,ASTdataGridView);
-
-            job_path = GlobalV.customers_dir + ASTProjectsListBox.SelectedValue + @"\";
-            notes_path = GlobalV.customers_dir + ASTProjectsListBox.SelectedValue + @"\" + ASTProjectsListBox.SelectedValue + "_notes.xlsm";
-
-            project_id=getProjectID(ASTProjectsListBox.SelectedValue.ToString());
-
-            foreach (Sites Site in Sites)
+            if (IsServerConnected())
             {
-                Site.SiteID = CreateSiteRecord(Site.SiteName, Site.SiteAddress, Site.SiteState, project_id);
-                CreateBOSTool(Site.SiteName, Site.TempMax, Site.TempMin, Site.SiteName, Site.SiteState, Site.SiteID, job_path);
+                string project_id;
+                string job_path, notes_path;
+
+                //Add check to confirm all files are closed
+
+                ASTdataGridView.AllowUserToAddRows = false;
+
+                Sites[] Sites = new Sites[ASTdataGridView.RowCount];
+
+                Sites = getGeoData(Sites, ASTdataGridView);
+
+                job_path = GlobalV.customers_dir + ASTProjectsListBox.SelectedValue + @"\";
+                notes_path = GlobalV.customers_dir + ASTProjectsListBox.SelectedValue + @"\" + ASTProjectsListBox.SelectedValue + "_notes.xlsm";
+
+                project_id = getProjectID(ASTProjectsListBox.SelectedValue.ToString());
+
+                foreach (Sites Site in Sites)
+                {
+                    Site.SiteID = CreateSiteRecord(Site.SiteName, Site.SiteAddress, Site.SiteState, project_id);
+                    CreateBOSTool(Site.SiteName, Site.TempMax, Site.TempMin, Site.SiteName, Site.SiteState, Site.SiteID, job_path);
+                }
+
+                UpdateNotesTool(Sites, notes_path, job_path);
+                AddSitesXML(Sites, ASTProjectsListBox.SelectedValue.ToString());
+
+                MessageBox.Show("Sites Added");
+                dataGridView1.AllowUserToAddRows = true;
+            }
+            else
+            {
+                MessageBox.Show("Cannot connect to CommSales database.  Try reconnecting to VPN.");
             }
 
-            UpdateNotesTool(Sites,notes_path,job_path);
-            AddSitesXML(Sites, ASTProjectsListBox.SelectedValue.ToString());
-
-            MessageBox.Show("Sites Added");
-            dataGridView1.AllowUserToAddRows = true;
-
+        }
+        public bool IsServerConnected()
+        {
+            using (var l_oConnection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    l_oConnection.Open();
+                    return true;
+                }
+                catch (SqlException)
+                {
+                    return false;
+                }
+            }
         }
 
         private string getProjectID(string project_name)
@@ -414,49 +436,63 @@ namespace StartCSE
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.AllowUserToAddRows = false;         
-
-            Sites[] Sites1 = new Sites[dataGridView1.RowCount];
-
-            Sites1 = getGeoData(Sites1,dataGridView1);
-
-            int count = 0;
-
-            //Creates Job Folder for One or Many Sites
-            if (MStextBox1.Text.Length == 0)
+            if (IsServerConnected() || OfflinecheckBox.Checked==true)
             {
-                CreateJobDirectory(Sites1[0].SiteName);
-                GlobalV.job_path = GlobalV.customers_dir + Sites1[0].SiteName + @"\";
-                GlobalV.project_name = Sites1[0].SiteName;
+
+                dataGridView1.AllowUserToAddRows = false;
+
+                Sites[] Sites1 = new Sites[dataGridView1.RowCount];
+
+                Sites1 = getGeoData(Sites1, dataGridView1);
+
+                int count = 0;
+
+                //Creates Job Folder for One or Many Sites
+                if (MStextBox1.Text.Length == 0)
+                {
+                    CreateJobDirectory(Sites1[0].SiteName);
+                    GlobalV.job_path = GlobalV.customers_dir + Sites1[0].SiteName + @"\";
+                    GlobalV.project_name = Sites1[0].SiteName;
+                }
+                else
+                {
+                    CreateJobDirectory(MStextBox1.Text);
+                    GlobalV.job_path = GlobalV.customers_dir + MStextBox1.Text + @"\";
+                    GlobalV.project_name = MStextBox1.Text;
+                }
+
+                //SQL Project Record Creation
+                if (!OfflinecheckBox.Checked)
+                {
+                    CreateProjectRecord(GlobalV.project_name);
+                }
+
+                count = 0;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (!OfflinecheckBox.Checked)
+                    {
+                        Sites1[count].SiteID = CreateSiteRecord(Sites1[count].SiteName, Sites1[count].SiteAddress, Sites1[count].SiteState, GlobalV.project_ID.ToString());
+                    }
+
+                    //SQL Site Record Creation
+                    CreateBOSTool(Sites1[count].SiteName, Sites1[count].TempMax, Sites1[count].TempMin, Sites1[count].SiteName, Sites1[count].SiteState, Sites1[count].SiteID, GlobalV.job_path);
+
+                    count++;
+                }
+
+                UpdateNotesTool(Sites1, GlobalV.notes_path, GlobalV.job_path);
+
+                CreateProjectXML(Sites1, GlobalV.project_name);
+
+                dataGridView1.AllowUserToAddRows = true;
+                System.Diagnostics.Process.Start(GlobalV.job_path);
+                MessageBox.Show("Job Created");
             }
             else
             {
-                CreateJobDirectory(MStextBox1.Text);
-                GlobalV.job_path = GlobalV.customers_dir + MStextBox1.Text + @"\";
-                GlobalV.project_name = MStextBox1.Text;
+                MessageBox.Show("Cannot connect to CommSales database.  Try reconnecting to VPN.");
             }
-
-            //SQL Project Record Creation
-            CreateProjectRecord(GlobalV.project_name);
-
-            count = 0;
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                Sites1[count].SiteID = CreateSiteRecord(Sites1[count].SiteName, Sites1[count].SiteAddress, Sites1[count].SiteState,GlobalV.project_ID.ToString());
-
-                //SQL Site Record Creation
-                CreateBOSTool(Sites1[count].SiteName, Sites1[count].TempMax, Sites1[count].TempMin, Sites1[count].SiteName, Sites1[count].SiteState,Sites1[count].SiteID,GlobalV.job_path);
-
-                count++;    
-            }
-
-            UpdateNotesTool(Sites1,GlobalV.notes_path,GlobalV.job_path);
-
-            CreateProjectXML(Sites1, GlobalV.project_name);
-
-            dataGridView1.AllowUserToAddRows = true;
-            System.Diagnostics.Process.Start(GlobalV.job_path);            
-            MessageBox.Show("Job Created");
         }
 
         private void AddSitesXML(Sites[] Sites,string project_name)
@@ -611,7 +647,12 @@ namespace StartCSE
         excelWorksheet.Select(true);
         excelApp.Cells[13, 2].Value2 = tmin;
         excelApp.Cells[14, 2].Value2 = tmax;
-        //excelApp.Cells[1, 10].Value2 = siteid;  SQL
+        
+        if (siteid != null || siteid.ToString() != "")
+        {
+        excelApp.Cells[1, 10].Value2 = siteid;  //SQL
+        }
+
         excelApp.Cells[9, 2].Value2 = sname;
         excelApp.Cells[26, 2].Value2 = sstate;
         excelWorksheet.Visible = Excel.XlSheetVisibility.xlSheetVeryHidden;

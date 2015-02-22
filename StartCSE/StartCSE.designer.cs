@@ -64,6 +64,7 @@
             this.ASTClearButton = new System.Windows.Forms.Button();
             this.ASTPasteButton = new System.Windows.Forms.Button();
             this.ASTProjectsListBox = new System.Windows.Forms.ListBox();
+            this.OfflinecheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ProgressgroupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -313,10 +314,6 @@
             this.comboBoxPDM.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxPDM.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxPDM.FormattingEnabled = true;
-            this.comboBoxPDM.Items.AddRange(new object[] {
-            "Brent Eskay",
-            "Dan Leary",
-            "Lauren Harris"});
             this.comboBoxPDM.Location = new System.Drawing.Point(136, 46);
             this.comboBoxPDM.Name = "comboBoxPDM";
             this.comboBoxPDM.Size = new System.Drawing.Size(219, 23);
@@ -433,12 +430,23 @@
             this.ASTProjectsListBox.Size = new System.Drawing.Size(539, 109);
             this.ASTProjectsListBox.TabIndex = 0;
             // 
+            // OfflinecheckBox
+            // 
+            this.OfflinecheckBox.AutoSize = true;
+            this.OfflinecheckBox.Location = new System.Drawing.Point(485, 607);
+            this.OfflinecheckBox.Name = "OfflinecheckBox";
+            this.OfflinecheckBox.Size = new System.Drawing.Size(112, 19);
+            this.OfflinecheckBox.TabIndex = 13;
+            this.OfflinecheckBox.Text = "Work Offline?";
+            this.OfflinecheckBox.UseVisualStyleBackColor = true;
+            // 
             // StartCSE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(629, 669);
+            this.ClientSize = new System.Drawing.Size(629, 638);
+            this.Controls.Add(this.OfflinecheckBox);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.label10);
@@ -454,6 +462,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(645, 676);
             this.MinimumSize = new System.Drawing.Size(645, 676);
             this.Name = "StartCSE";
             this.Text = "StartCSE";
@@ -507,6 +516,7 @@
         private System.Windows.Forms.Button AddSitesButton;
         private System.Windows.Forms.Button ASTClearButton;
         private System.Windows.Forms.Button ASTPasteButton;
+        private System.Windows.Forms.CheckBox OfflinecheckBox;
     }
 }
 
