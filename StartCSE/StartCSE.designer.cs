@@ -308,6 +308,7 @@
             this.label11.Size = new System.Drawing.Size(50, 18);
             this.label11.TabIndex = 2;
             this.label11.Text = "PDM:";
+            this.label11.Visible = false;
             // 
             // comboBoxPDM
             // 
@@ -319,6 +320,7 @@
             this.comboBoxPDM.Size = new System.Drawing.Size(219, 23);
             this.comboBoxPDM.Sorted = true;
             this.comboBoxPDM.TabIndex = 11;
+            this.comboBoxPDM.Visible = false;
             // 
             // tabControl1
             // 
@@ -433,7 +435,10 @@
             // OfflinecheckBox
             // 
             this.OfflinecheckBox.AutoSize = true;
-            this.OfflinecheckBox.Location = new System.Drawing.Point(485, 607);
+            this.OfflinecheckBox.Checked = true;
+            this.OfflinecheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.OfflinecheckBox.Enabled = false;
+            this.OfflinecheckBox.Location = new System.Drawing.Point(492, 632);
             this.OfflinecheckBox.Name = "OfflinecheckBox";
             this.OfflinecheckBox.Size = new System.Drawing.Size(112, 19);
             this.OfflinecheckBox.TabIndex = 13;
@@ -445,7 +450,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(629, 638);
+            this.ClientSize = new System.Drawing.Size(629, 666);
             this.Controls.Add(this.OfflinecheckBox);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.UpdateButton);
@@ -462,8 +467,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(645, 676);
-            this.MinimumSize = new System.Drawing.Size(645, 676);
+            this.MaximumSize = new System.Drawing.Size(645, 704);
+            this.MinimumSize = new System.Drawing.Size(645, 704);
             this.Name = "StartCSE";
             this.Text = "StartCSE";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

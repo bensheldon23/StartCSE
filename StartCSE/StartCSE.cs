@@ -25,6 +25,7 @@ namespace StartCSE
 {
     public partial class StartCSE : Form
     {
+        new ProgressForm progressform = new ProgressForm();
         GeneralFunctions GF = new GeneralFunctions();
 
         string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["StartCSE.Properties.Settings.CommSalesPricingPlatformConnectionString"].ConnectionString;
@@ -126,6 +127,14 @@ namespace StartCSE
         public StartCSE()
         {
             InitializeComponent();
+
+            if (Environment.UserName == "bsheldon" || Environment.UserName == "pmorini" || Environment.UserName == "jfiorelli" || Environment.UserName == "dsmith")
+            {
+                label11.Visible = true;
+                comboBoxPDM.Visible = true;
+                OfflinecheckBox.Enabled = true;
+                OfflinecheckBox.Checked = false;
+            }
 
             //Loading PMs from AD
             comboBoxPDM.DataSource = FindPDMs();
@@ -399,6 +408,12 @@ namespace StartCSE
             excelApp.Cells[1, 1].Value2 = GlobalV.project_name;
             excelApp.Cells[1, 2].Value2 = GlobalV.version_bos_current;
 
+            if (GlobalV.project_ID.ToString()!="")
+            {
+                excelApp.Cells[1, 3].Value2 = "ProjectID";
+                excelApp.Cells[1, 4].Value2 = GlobalV.project_ID;
+            }
+
             row_index = count+3;
             while (excelApp.Cells[row_index,1].Value2 != null)
             {
@@ -499,7 +514,7 @@ namespace StartCSE
         {
             foreach (Sites Site in Sites)
             {
-            XDocument xDocument = XDocument.Load(GlobalV.customers_dir + project_name + @"\project.xml");
+            XDocument xDocument = XDocument.Load(GlobalV.customers_dir + project_name + @"\Layout\project.xml");
             XElement root = xDocument.Element("Project");
             root.Add(
                 new XElement("Site",
@@ -515,7 +530,7 @@ namespace StartCSE
 
         private void CreateProjectXML(Sites[] Sites,string project_name)
         {
-            using (XmlWriter xmlWriter = XmlWriter.Create(@"c:\common\installs\cse\customers\"+project_name+@"\project.xml"))
+            using (XmlWriter xmlWriter = XmlWriter.Create(@"c:\common\installs\cse\customers\"+project_name+@"\Layout\project.xml"))
             {
             xmlWriter.WriteStartDocument();
             xmlWriter.WriteStartElement("Project");
@@ -648,7 +663,7 @@ namespace StartCSE
         excelApp.Cells[13, 2].Value2 = tmin;
         excelApp.Cells[14, 2].Value2 = tmax;
         
-        if (siteid != null || siteid.ToString() != "")
+        if (siteid.ToString() != "")
         {
         excelApp.Cells[1, 10].Value2 = siteid;  //SQL
         }
