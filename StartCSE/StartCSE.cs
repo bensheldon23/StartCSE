@@ -127,17 +127,18 @@ namespace StartCSE
         public StartCSE()
         {
             InitializeComponent();
-
-            if (Environment.UserName == "bsheldon" || Environment.UserName == "pmorini" || Environment.UserName == "jfiorelli" || Environment.UserName == "dsmith")
+            
+            if (Environment.UserName == "bsheldon" || Environment.UserName == "mporter" || Environment.UserName == "pmorini" || Environment.UserName == "jfiorelli" || Environment.UserName == "dsmith4")
             {
                 label11.Visible = true;
                 comboBoxPDM.Visible = true;
                 OfflinecheckBox.Enabled = true;
                 OfflinecheckBox.Checked = false;
-            }
 
-            //Loading PMs from AD
-            comboBoxPDM.DataSource = FindPDMs();
+                //Loading PMs from AD
+                comboBoxPDM.DataSource = FindPDMs();
+            }
+            
 
             //Loading Version Info
             List<string> version = new List<string>();
@@ -180,7 +181,7 @@ namespace StartCSE
             
             try  
             {
-                //las5dmc00.solarcity.local
+                //slc5dmc00.solarcity.local
                 PrincipalContext AD = new PrincipalContext(ContextType.Domain, "slc5dmc00.solarcity.local"); 
                 UserPrincipal     u      = new UserPrincipal(AD);  
                 PrincipalSearcher search = new PrincipalSearcher(u);
@@ -223,8 +224,11 @@ namespace StartCSE
 
                 foreach (Sites Site in Sites)
                 {
-                    Site.SiteID = CreateSiteRecord(Site.SiteName, Site.SiteAddress, Site.SiteState, project_id);
-                    CreateBOSTool(Site.SiteName, Site.TempMax, Site.TempMin, Site.SiteName, Site.SiteState, Site.SiteID, job_path);
+                    if (OfflinecheckBox.Checked != true)
+                    {
+                        Site.SiteID = CreateSiteRecord(Site.SiteName, Site.SiteAddress, Site.SiteState, project_id);
+                    }
+                    CreateBOSTool(Site.SiteName, Site.TempMax, Site.TempMin, Site.SiteName, Site.SiteState, Site.SiteID, job_path,project_id);
                 }
 
                 UpdateNotesTool(Sites, notes_path, job_path);
@@ -258,7 +262,7 @@ namespace StartCSE
         private string getProjectID(string project_name)
         {
             string project_id="";
-            using (XmlReader xmlReader = XmlReader.Create(GlobalV.customers_dir + project_name +@"\project.xml"))
+            using (XmlReader xmlReader = XmlReader.Create(GlobalV.customers_dir + project_name +@"\Layout\project.xml"))
             {
                 while (xmlReader.Read())
                 {
@@ -491,7 +495,7 @@ namespace StartCSE
                     }
 
                     //SQL Site Record Creation
-                    CreateBOSTool(Sites1[count].SiteName, Sites1[count].TempMax, Sites1[count].TempMin, Sites1[count].SiteName, Sites1[count].SiteState, Sites1[count].SiteID, GlobalV.job_path);
+                    CreateBOSTool(Sites1[count].SiteName, Sites1[count].TempMax, Sites1[count].TempMin, Sites1[count].SiteName, Sites1[count].SiteState, Sites1[count].SiteID, GlobalV.job_path, GlobalV.project_ID.ToString());
 
                     count++;
                 }
@@ -523,7 +527,7 @@ namespace StartCSE
                 new XElement("SiteLat",Site.SiteLat),
                 new XElement("SiteLong",Site.SiteLong),
                 new XElement("SiteID",Site.SiteID)));
-            xDocument.Save(GlobalV.customers_dir + project_name + @"\project.xml");
+            xDocument.Save(GlobalV.customers_dir + project_name + @"\Layout\project.xml");
             }
         }
 
@@ -645,7 +649,7 @@ namespace StartCSE
             }
         }
 
-        public void CreateBOSTool(string sitename, double tmax, double tmin, string sname, string sstate,int siteid, string job_path)
+        public void CreateBOSTool(string sitename, double tmax, double tmin, string sname, string sstate,int siteid, string job_path, string project_id)
         {
         File.Copy(GlobalV.CSE_path + @"\BOS_Costing_Tool.xlsm", job_path + @"Costing\" + sitename + @"_BOS_" + GlobalV.version_bos_current + "_R_0.1.xlsm");
         
@@ -667,6 +671,12 @@ namespace StartCSE
         {
         excelApp.Cells[1, 10].Value2 = siteid;  //SQL
         }
+
+        if (project_id != "")
+        {
+        excelApp.Cells[2, 10].Value2 = project_id;
+        }
+        
 
         excelApp.Cells[9, 2].Value2 = sname;
         excelApp.Cells[26, 2].Value2 = sstate;

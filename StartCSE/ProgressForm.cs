@@ -14,7 +14,7 @@ namespace StartCSE
     {
         public string Message
         {
-            set { label1.Text = value; }
+            set { currentStatusLbl.Text = value; }
         }
         public int ProgressValue
         {
