@@ -308,7 +308,6 @@
             this.label11.Size = new System.Drawing.Size(50, 18);
             this.label11.TabIndex = 2;
             this.label11.Text = "PDM:";
-            this.label11.Visible = false;
             // 
             // comboBoxPDM
             // 
@@ -320,7 +319,6 @@
             this.comboBoxPDM.Size = new System.Drawing.Size(219, 23);
             this.comboBoxPDM.Sorted = true;
             this.comboBoxPDM.TabIndex = 11;
-            this.comboBoxPDM.Visible = false;
             // 
             // tabControl1
             // 
@@ -435,9 +433,6 @@
             // OfflinecheckBox
             // 
             this.OfflinecheckBox.AutoSize = true;
-            this.OfflinecheckBox.Checked = true;
-            this.OfflinecheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.OfflinecheckBox.Enabled = false;
             this.OfflinecheckBox.Location = new System.Drawing.Point(492, 632);
             this.OfflinecheckBox.Name = "OfflinecheckBox";
             this.OfflinecheckBox.Size = new System.Drawing.Size(112, 19);

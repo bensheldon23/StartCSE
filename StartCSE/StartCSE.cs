@@ -29,6 +29,7 @@ namespace StartCSE
         GeneralFunctions GF = new GeneralFunctions();
 
         string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["StartCSE.Properties.Settings.CommSalesPricingPlatformConnectionString"].ConnectionString;
+        string username = "";
         public class Sites
         {
             private int Site_ID;
@@ -127,18 +128,12 @@ namespace StartCSE
         public StartCSE()
         {
             InitializeComponent();
-            
-            if (Environment.UserName == "bsheldon" || Environment.UserName == "mporter" || Environment.UserName == "pmorini" || Environment.UserName == "jfiorelli" || Environment.UserName == "dsmith4")
-            {
-                label11.Visible = true;
-                comboBoxPDM.Visible = true;
-                OfflinecheckBox.Enabled = true;
-                OfflinecheckBox.Checked = false;
 
-                //Loading PMs from AD
-                comboBoxPDM.DataSource = FindPDMs();
-            }
-            
+            //Loading PMs from AD
+            comboBoxPDM.DataSource = FindPDMs();           
+
+            //Load SE
+            username = FindSE();
 
             //Loading Version Info
             List<string> version = new List<string>();
@@ -199,7 +194,32 @@ namespace StartCSE
                 MessageBox.Show("PDMs not loaded.  Try reconnecting to VPN."+System.Environment.NewLine+"Error: " + e.Message);  
            }
            return PDMs;
+        }
 
+        private string FindSE()
+        {
+            string SE = "";
+
+            try
+            {
+                //slc5dmc00.solarcity.local
+                PrincipalContext AD = new PrincipalContext(ContextType.Domain, "slc5dmc00.solarcity.local");
+                UserPrincipal u = new UserPrincipal(AD);
+                PrincipalSearcher search = new PrincipalSearcher(u);
+                u.SamAccountName = Environment.UserName;
+
+                foreach (UserPrincipal result in search.FindAll())
+                {
+                    SE=result.DisplayName;
+                }
+                search.Dispose();
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show("SE not loaded.  Try reconnecting to VPN." + System.Environment.NewLine + "Error: " + e.Message);
+            }
+            return SE;
         }
 
         private void AddSitesButton_Click(object sender, EventArgs e)
@@ -743,7 +763,7 @@ namespace StartCSE
         private void CreateProjectRecord(string ProjectName)
         {
             string insertSQL;
-            insertSQL = "INSERT INTO Projects (ProjectName,PDM) VALUES ('" + ProjectName + "','"+comboBoxPDM.SelectedItem.ToString()+"'); SELECT CAST(scope_identity() AS int)";
+            insertSQL = "INSERT INTO Projects (ProjectName,PDM, SE) VALUES ('" + ProjectName + "','"+comboBoxPDM.SelectedItem.ToString()+ "','"+username+"'); SELECT CAST(scope_identity() AS int)";
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(insertSQL, con);
             try
